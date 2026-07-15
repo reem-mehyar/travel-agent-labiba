@@ -9,7 +9,6 @@ def main() -> None:
     """
     Start the AI Travel Agent.
     """
-
     agent = TravelAgent()
 
     print("=" * 50)

@@ -23,10 +23,7 @@ class TravelAgent:
     """
 
     def __init__(self) -> None:
-        """
-        Initialize all system dependencies.
-        """
-
+        
         self.openai_client = OpenAIClient()
 
         self.skills = {
@@ -61,6 +58,20 @@ class TravelAgent:
             search_results=skill_result,
         )
 
+
+
+    def _generate_missing_information_response(self, missing_fields: dict) -> str:
+    
+        field_names = ", ".join(
+            field.replace("_", " ")
+            for field in missing_fields.keys()
+        )
+
+        return (
+            "I need some additional information before I can continue.\n\n"
+            f"Missing information: {field_names}."
+        )
+    
     def _detect_intent(self, user_message: str,) -> dict:
         """
         Detect the user's intent using OpenAI.
@@ -88,8 +99,7 @@ class TravelAgent:
             "Intent detection did not return a dictionary."
         )
 
-
-         if "skill" not in intent:
+        if "skill" not in intent:
           raise RuntimeError(
             "Intent data does not contain a skill."
         )
@@ -146,15 +156,10 @@ class TravelAgent:
     or "flights" in skill_result
             )
 
-    def _generate_final_response(
-        self,
-        user_message: str,
-        search_results: dict,
-    ) -> str:
+    def _generate_final_response(self, user_message: str, search_results: dict,) -> str:
         """
         Generate the final natural-language response.
         """
-
         final_prompt = (
             f"Original User Request:\n"
             f"{user_message}\n\n"
