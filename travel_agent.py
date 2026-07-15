@@ -5,11 +5,10 @@ from datetime import date
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
 
-from prompts import (
-    SYSTEM_PROMPT,
-    INTENT_PROMPT,
-    FINAL_RESPONSE_PROMPT,
-)
+from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT
+
+
+RESET_PHRASES = {"start over", "new search", "reset", "forget that", "cancel"}
 
 class TravelAgent:
     """
@@ -30,10 +29,13 @@ class TravelAgent:
             "hotel": HotelSkill(),
             "flight": FlightSkill(),
         }
+        self.conversation_history = []
+        self.pending_intent = {}
+
 
     def handle_request(self, user_message: str) -> str:
         """
-        Handle a complete user request.
+        Handle a complete user request, with short-term memory across turns.
 
         Args:
             user_message:
@@ -42,39 +44,57 @@ class TravelAgent:
         Returns:
             Final response returned to the user.
         """
+        # 1. Explicit reset command
+        if user_message.strip().lower() in RESET_PHRASES:
+            self.pending_intent = {}
+            self.conversation_history = []
+            return "Sure, let's start fresh. Where would you like to go?"
 
-        intent_data = self._detect_intent(user_message)
+        # 2. Detect intent from this message (with conversation context)
+        new_intent = self._detect_intent(user_message)
 
-        skill_result = self._execute_skill(intent_data)
+        # 3. Topic-change guard: if destination changed, discard old pending fields
+        old_destination = self.pending_intent.get("destination_city")
+        new_destination = new_intent.get("destination_city")
+        if old_destination and new_destination and new_destination != old_destination:
+            self.pending_intent = {}
 
+        # 4. Merge new info into whatever was already collected this session
+        merged_intent = {
+            **self.pending_intent,
+            **{k: v for k, v in new_intent.items() if v is not None},
+        }
+
+        # 5. Execute the matching skill
+        skill_result = self._execute_skill(merged_intent)
+
+        # 6. Still missing fields -> remember progress, ask for the rest
         if self._missing_information(skill_result):
+            self.pending_intent = merged_intent
+            response = self._generate_missing_information_response(skill_result)
+            self.conversation_history.append({"role": "assistant", "content": response})
+            return response
 
-            return self._generate_missing_information_response(
-                skill_result
-            )
+        # 7. Completed successfully -> reset for next request
+        self.pending_intent = {}
+        response = self._generate_final_response(user_message=user_message, search_results=skill_result)
+        self.conversation_history.append({"role": "assistant", "content": response})
+        return response
 
-        return self._generate_final_response(
-            user_message=user_message,
-            search_results=skill_result,
-        )
-
-
-
-    def _generate_missing_information_response(self, missing_fields: dict) -> str:
-    
-        field_names = ", ".join(
-            field.replace("_", " ")
-            for field in missing_fields.keys()
-        )
-
-        return (
-            "I need some additional information before I can continue.\n\n"
-            f"Missing information: {field_names}."
-        )
-    
     def _detect_intent(self, user_message: str) -> dict:
+        
+        self.conversation_history.append({"role": "user", "content": user_message})
         today_str = date.today().isoformat()
-        contextualized_input = f"Today's date is {today_str}.\n\nUser request: {user_message}"
+
+        history_text = "\n".join(
+                f"{m['role']}: {m['content']}" for m in self.conversation_history[-6:]  # last few turns
+            )
+        contextualized_input = (
+                f"Today's date is {today_str}.\n\n"
+                f"Conversation so far:\n{history_text}\n\n"
+                f"Extract the current travel intent, using earlier turns to fill in "
+                f"anything not repeated in the latest message."
+            )
 
         intent = self.openai_client.generate_response(
             system_prompt=INTENT_PROMPT,
@@ -152,15 +172,4 @@ class TravelAgent:
         )
 
         return self.openai_client.generate_response(
-            system_prompt="""
-You are an AI Travel Agent.
-
-IMPORTANT:
-- Reply ONLY in English.
-- Never use Russian.
-- Use ONLY the provided search results.
-- Never invent information.
-- Keep the response short and professional.
-""",
-            user_input=final_prompt,
-        )
+            system_prompt=FINAL_RESPONSE_PROMPT,user_input=final_prompt)
