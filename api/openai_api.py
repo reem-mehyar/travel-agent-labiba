@@ -2,6 +2,8 @@
 OpenAI client responsible for all communication with the OpenAI API.
 """
 
+import json
+
 from openai import OpenAI, OpenAIError
 
 from config import OPENAI_API_KEY, OPENAI_MODEL
@@ -23,10 +25,10 @@ class OpenAIClient:
         self,
         system_prompt: str,
         user_input: str,
-        response_format: dict | None = None,
-    ) -> str:
+        as_json: bool = False,
+    ) -> str | dict:
         """
-        Send a request to the OpenAI Responses API and return the model output.
+        Generate a response from the OpenAI model.
 
         Args:
             system_prompt:
@@ -35,28 +37,31 @@ class OpenAIClient:
             user_input:
                 The user's message.
 
-            response_format:
-                Optional structured output schema.
+            as_json:
+                If True, the model response is parsed into a Python
+                dictionary.
 
         Returns:
-            Plain text response from the model.
+            The model response as a string or dictionary.
 
         Raises:
             RuntimeError:
-                If the OpenAI request fails.
+                If the OpenAI request fails or an invalid JSON response
+                is returned.
         """
 
         request = {
-            "model": self.model,
-            "instructions": system_prompt,
-            "input": user_input,
+    "model": self.model,
+    "instructions": system_prompt,
+    "input": user_input,
+    "text": {
+        "format": {
+            "type": "text"
         }
+    }
+}
 
-        if response_format is not None:
-            request["text"] = {
-                "format": response_format
-            }
-
+      
         try:
             response = self.client.responses.create(**request)
 
@@ -65,4 +70,15 @@ class OpenAIClient:
                 f"OpenAI API request failed: {error}"
             ) from error
 
-        return response.output_text
+        output = response.output_text.strip()
+
+        if not as_json:
+            return output
+
+        try:
+            return json.loads(output)
+
+        except json.JSONDecodeError as error:
+            raise RuntimeError(
+                "OpenAI returned an invalid JSON response."
+            ) from error
