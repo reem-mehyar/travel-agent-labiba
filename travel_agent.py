@@ -139,6 +139,25 @@ class TravelAgent:
 
         return skill.execute(intent_data)
 
+
+    def _generate_missing_information_response(
+        self,
+        missing_fields: dict,
+    ) -> str:
+        """
+        Generate a clarification request when required fields
+        are missing.
+        """
+        field_names = ", ".join(
+            field.replace("_", " ")
+            for field in missing_fields.keys()
+        )
+
+        return (
+            "I need some additional information before I can continue.\n\n"
+            f"Missing information: {field_names}."
+        )
+    
     def _missing_information(
         self,
         skill_result: dict,
