@@ -20,9 +20,12 @@ def main() -> None:
 
         user_message = input("\nYou: ").strip()
 
-        if user_message.lower() == "exit":
+        if user_message.lower() in ("exit", "quit"):
             print("\nGoodbye!")
             break
+
+        if not user_message:
+            continue
 
         try:
             response = agent.handle_request(user_message)
