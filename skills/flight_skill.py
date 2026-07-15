@@ -18,6 +18,9 @@ class FlightSkill:
         origin_code = self._resolve_airport_code(intent_data["departure_city"])
         destination_code = self._resolve_airport_code(intent_data["destination_city"])
 
+        if len(origin_code) != 3 or len(destination_code) !=3:
+            return {"flights": [], "note": f"Could not find a specific airport for the given location. Please specify a city rather than a country or region."}
+
         departure_date = intent_data["departure_date"]
         return_date = intent_data.get("return_date")
 

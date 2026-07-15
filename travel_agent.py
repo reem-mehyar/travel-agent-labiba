@@ -87,7 +87,7 @@ class TravelAgent:
         today_str = date.today().isoformat()
 
         history_text = "\n".join(
-                f"{m['role']}: {m['content']}" for m in self.conversation_history[-6:]  # last few turns
+                f"{m['role']}: {m['content']}" for m in self.conversation_history[-12:]  # last few turns
             )
         contextualized_input = (
                 f"Today's date is {today_str}.\n\n"
@@ -138,7 +138,6 @@ class TravelAgent:
             )
 
         return skill.execute(intent_data)
-
 
     def _generate_missing_information_response(
         self,
