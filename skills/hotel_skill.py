@@ -1,4 +1,5 @@
 from api.serpapi_api import search_hotels
+from skills.date_validation import validate_dates
 
 
 class HotelSkill:
@@ -19,6 +20,10 @@ class HotelSkill:
         check_in = intent_data["check_in"]
         check_out = intent_data["check_out"]
         adults = intent_data.get("adults") or 2
+
+        validation_error = validate_dates(check_in, check_out)
+        if validation_error:
+            return {"hotels": [], "note": validation_error}
 
         raw_results = search_hotels(location, check_in, check_out, adults)
 
