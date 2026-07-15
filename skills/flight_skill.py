@@ -39,5 +39,8 @@ class FlightSkill:
 
         suggestions = autocomplete_flight_location(city_name)
         if suggestions:
-            return suggestions[0].get("id", city_name)  
+            top_match = suggestions[0]
+            airports = top_match.get("airports", [])
+            if airports:
+                return airports[0].get("id", city_name)  
         return city_name

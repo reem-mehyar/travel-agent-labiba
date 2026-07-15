@@ -1,7 +1,7 @@
 import json
 
 from api.openai_api import OpenAIClient
-
+from datetime import date
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
 
@@ -72,39 +72,23 @@ class TravelAgent:
             f"Missing information: {field_names}."
         )
     
-    def _detect_intent(self, user_message: str,) -> dict:
-        """
-        Detect the user's intent using OpenAI.
+    def _detect_intent(self, user_message: str) -> dict:
+        today_str = date.today().isoformat()
+        contextualized_input = f"Today's date is {today_str}.\n\nUser request: {user_message}"
 
-        Args:
-            user_message:
-                Original user request.
-
-        Returns:
-            Structured intent dictionary.
-
-        Raises:
-            RuntimeError:
-                If the intent response is invalid.
-    """
         intent = self.openai_client.generate_response(
-        system_prompt=INTENT_PROMPT,
-        user_input=user_message,
-        as_json=True,
-    )
+            system_prompt=INTENT_PROMPT,
+            user_input=contextualized_input,
+            as_json=True,
+        )
         print(intent)
 
         if not isinstance(intent, dict):
-         raise RuntimeError(
-            "Intent detection did not return a dictionary."
-        )
-
+            raise RuntimeError("Intent detection did not return a dictionary.")
         if "skill" not in intent:
-          raise RuntimeError(
-            "Intent data does not contain a skill."
-        )
+            raise RuntimeError("Intent data does not contain a skill.")
         return intent
-    
+        
     def _execute_skill(
         self,
         intent_data: dict,

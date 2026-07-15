@@ -112,6 +112,8 @@ Rules
 
 - Never guess missing values.
 - Missing values must be null.
+- If the user gives a date without a year, assume the nearest future occurrence 
+  of that date relative to today's date.
 - Dates must use YYYY-MM-DD.
 - Return ONLY valid JSON.
 """.strip()
