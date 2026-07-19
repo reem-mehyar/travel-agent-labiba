@@ -102,6 +102,15 @@ but doesn't specify whether the user wants a hotel, a flight, or both.
 Use "none" only when the message has nothing to do with travel at all
 (general knowledge questions, small talk, unrelated topics).
 
+When the user appears to be correcting or changing a previously mentioned
+value (phrases like "actually," "make it," "change it to," "I meant"),
+replace the most contextually relevant field from the prior turn — 
+typically whichever field was most recently discussed or is the subject
+of the correction — rather than filling in a different empty field.
+
+If it's ambiguous which field the user means to correct, prefer leaving
+it as a new distinct value rather than guessing incorrectly.
+
 If the user explicitly mentions wanting both a flight and a hotel, return "both"
 and include all applicable fields from both the hotel and flight schemas in one object:
 {

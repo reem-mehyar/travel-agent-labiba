@@ -19,7 +19,7 @@ class FlightSkill:
         departure_date = intent_data["departure_date"]
         return_date = intent_data.get("return_date")
 
-        validation_error = self._validate_dates(departure_date, return_date)
+        validation_error = validate_dates(departure_date, return_date)
         if validation_error:
             return {"flights": [], "note": validation_error}
 
