@@ -53,6 +53,16 @@ class TravelAgent:
         # 2. Detect intent from this message (with conversation context)
         new_intent = self._detect_intent(user_message)
 
+        if new_intent.get("skill") == "none":
+            response = ("I'm a travel assistant, so I can only help with travel related inquiries. Is there a trip I can help you plan?")
+            self.conversation_history.append({"role": "assistant", "content": response})
+            return response
+
+        if new_intent.get("skill") == "unclear":
+            response = ("I'd be happy to help with that trip! Are you looking for hotels, flights, or both?")
+            self.conversation_history.append({"role": "assistant", "content": response})
+            return response
+    
         # 3. Topic-change guard: if destination changed, discard old pending fields
         old_destination = self.pending_intent.get("destination_city")
         new_destination = new_intent.get("destination_city")
@@ -109,10 +119,7 @@ class TravelAgent:
             raise RuntimeError("Intent data does not contain a skill.")
         return intent
         
-    def _execute_skill(
-        self,
-        intent_data: dict,
-    ) -> dict:
+    def _execute_skill(self, intent_data: dict) -> dict:
         """
         Execute the appropriate travel skill.
 
@@ -127,15 +134,19 @@ class TravelAgent:
             RuntimeError:
                 If the requested skill is not supported.
         """
+        skill_name = intent_data.get("skill")
 
-        skill_name = intent_data["skill"]
-
+        if skill_name == "both":
+            hotel_result = self.skills["hotel"].execute(intent_data)
+            flight_result = self.skills["flight"].execute(intent_data)
+            combined = {}
+            combined.update(hotel_result)
+            combined.update(flight_result)
+            return combined
+        
         skill = self.skills.get(skill_name)
-
         if skill is None:
-            raise RuntimeError(
-                f"Unsupported skill: {skill_name}"
-            )
+            raise RuntimeError(f"Unsupported skill: {skill_name}")
 
         return skill.execute(intent_data)
 

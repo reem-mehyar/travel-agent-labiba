@@ -89,11 +89,33 @@ Never use markdown.
 
 Return ONLY one valid JSON object.
 
-Supported skills
+Supported skills:
+- hotel
+- flight
+- unclear   (travel-related, but not enough detail to know if it's a hotel or flight request)
+- none      (not travel-related at all)
+- both      (the user explicitly wants both a hotel and a flight)
 
-hotel
+Use "unclear" when the message is about travel/trip planning in general
+but doesn't specify whether the user wants a hotel, a flight, or both.
 
-flight
+Use "none" only when the message has nothing to do with travel at all
+(general knowledge questions, small talk, unrelated topics).
+
+If the user explicitly mentions wanting both a flight and a hotel, return "both"
+and include all applicable fields from both the hotel and flight schemas in one object:
+{
+    "skill": "both",
+    "location": "",
+    "check_in": "",
+    "check_out": "",
+    "adults": 2,
+    "departure_city": "",
+    "destination_city": "",
+    "departure_date": "",
+    "return_date": "",
+    "passengers": 1
+}
 
 Hotel JSON
 

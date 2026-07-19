@@ -3,17 +3,7 @@ from datetime import date, datetime
 
 
 def validate_dates(start_date: str, end_date: str = None) -> str | None:
-    """
-    Validates a start date (and optional end date) aren't in the past,
-    aren't malformed, and that end_date isn't before start_date.
 
-    Args:
-        start_date: departure_date or check_in, format "YYYY-MM-DD"
-        end_date: return_date or check_out, format "YYYY-MM-DD", optional
-
-    Returns:
-        An error message string if invalid, otherwise None.
-    """
     today = date.today()
 
     try:
