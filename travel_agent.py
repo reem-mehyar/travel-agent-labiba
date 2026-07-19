@@ -191,15 +191,19 @@ class TravelAgent:
     or "flights" in skill_result
             )
 
-    def _generate_final_response(self, user_message: str, search_results: dict,) -> str:
-        """
-        Generate the final natural-language response.
-        """
+    def _generate_final_response(self, user_message: str, search_results: dict) -> str:
+        
+        currency_note = f"\n\nAll prices are in {search_results.get('currency', 'USD')}." if search_results.get("currency") else ""
+        
         final_prompt = (
             f"Original User Request:\n"
             f"{user_message}\n\n"
             f"Search Results:\n"
-            f"{json.dumps(search_results, indent=2, ensure_ascii=False)}")
+            f"{json.dumps(search_results, indent=2, ensure_ascii=False)}"
+            f"{currency_note}"
+        )
 
         return self.openai_client.generate_response(
-            system_prompt=FINAL_RESPONSE_PROMPT,user_input=final_prompt)
+            system_prompt=FINAL_RESPONSE_PROMPT,
+            user_input=final_prompt,
+        )
