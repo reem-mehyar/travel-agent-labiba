@@ -25,8 +25,11 @@ class HotelSkill:
         if validation_error:
             return {"hotels": [], "note": validation_error}
 
-        raw_results = search_hotels(location, check_in, check_out, adults)
-
+        try: 
+            raw_results = search_hotels(location, check_in, check_out, adults)
+        except RuntimeError:
+            return {"hotels": [], "note": f"No hotels for '{location}' found. Please try another location."}
+    
         cleaned_hotels = [
             {
                 "name": h.get("name"),

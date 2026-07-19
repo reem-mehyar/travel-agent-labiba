@@ -19,13 +19,16 @@ class FlightSkill:
         departure_date = intent_data["departure_date"]
         return_date = intent_data.get("return_date")
 
-        validation_error = validate_dates(departure_date, return_date)
-        if validation_error:
-            return {"flights": [], "note": validation_error}
+        invalid_cities = []
+        if len(origin_code) != 3:
+            invalid_cities.append(f"departure city '{intent_data['departure_city']}'")
+        if len(destination_code) != 3:
+            invalid_cities.append(f"destination city '{intent_data['destination_city']}'")
 
-        if len(origin_code) != 3 or len(destination_code) !=3:
-            return {"flights": [], "note": f"Could not find a specific airport for the given location. Please specify a city rather than a country or region."}
-
+        if invalid_cities:
+            return {"flights": [], "note": (f"Could not find a specific airport for the {', '.join(invalid_cities)}. "
+            f"Please provide a valid city name.")}
+        
         raw_results = search_flights(origin_code, destination_code, departure_date, return_date)
 
         cleaned_flights = [
@@ -42,7 +45,11 @@ class FlightSkill:
 
     def _resolve_airport_code(self, city_name: str) -> str:
 
-        suggestions = autocomplete_flight_location(city_name)
+        try:
+            suggestions = autocomplete_flight_location(city_name)
+        except RuntimeError:
+            return city_name
+        
         if suggestions:
             top_match = suggestions[0]
             airports = top_match.get("airports", [])
