@@ -29,6 +29,10 @@ class FlightSkill:
             return {"flights": [], "note": (f"Could not find a specific airport for the {', '.join(invalid_cities)}. "
             f"Please provide a valid city name.")}
         
+        validation_error = validate_dates(departure_date, return_date)
+        if validation_error:
+            return {"flights": [], "note": validation_error}
+        
         raw_results = search_flights(origin_code, destination_code, departure_date, return_date)
 
         cleaned_flights = [
