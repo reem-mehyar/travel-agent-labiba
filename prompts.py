@@ -147,6 +147,9 @@ Flight JSON
   "passengers": 1
 }
 
+If the user specifies a currency (e.g. "in JOD", "in euros", "show prices in dollars"),
+extract the 3-letter ISO currency code into "currency". If not mentioned, return null.
+
 Rules
 
 - Never guess missing values.

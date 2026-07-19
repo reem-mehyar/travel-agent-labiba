@@ -60,7 +60,6 @@ class OpenAIClient:
         }
     }
 }
-
       
         try:
             response = self.client.responses.create(**request)

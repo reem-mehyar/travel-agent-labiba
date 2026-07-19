@@ -4,6 +4,7 @@ from api.openai_api import OpenAIClient
 from datetime import date
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
+from skills.currency_skill import CurrencySkill
 
 from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT
 
@@ -25,13 +26,10 @@ class TravelAgent:
         
         self.openai_client = OpenAIClient()
 
-        self.skills = {
-            "hotel": HotelSkill(),
-            "flight": FlightSkill(),
-        }
+        self.skills = {"hotel": HotelSkill(), "flight": FlightSkill()}
+        self.currency_skill = CurrencySkill()
         self.conversation_history = []
         self.pending_intent = {}
-
 
     def handle_request(self, user_message: str) -> str:
         """
@@ -84,6 +82,10 @@ class TravelAgent:
             response = self._generate_missing_information_response(skill_result)
             self.conversation_history.append({"role": "assistant", "content": response})
             return response
+
+        requested_currency = merged_intent.get("currency")
+        if requested_currency:
+            skill_result = self.currency_skill.convert_results(skill_result, requested_currency)
 
         # 7. Completed successfully -> reset for next request
         self.pending_intent = {}
@@ -197,8 +199,7 @@ class TravelAgent:
             f"Original User Request:\n"
             f"{user_message}\n\n"
             f"Search Results:\n"
-            f"{json.dumps(search_results, indent=2, ensure_ascii=False)}"
-        )
+            f"{json.dumps(search_results, indent=2, ensure_ascii=False)}")
 
         return self.openai_client.generate_response(
             system_prompt=FINAL_RESPONSE_PROMPT,user_input=final_prompt)
