@@ -108,11 +108,7 @@ class TravelAgent:
                 f"anything not repeated in the latest message."
             )
 
-        intent = self.openai_client.generate_response(
-            system_prompt=INTENT_PROMPT,
-            user_input=contextualized_input,
-            as_json=True,
-        )
+        intent = self.openai_client.generate_response(system_prompt=INTENT_PROMPT, user_input=contextualized_input, as_json=True,)
         print(intent)
 
         if not isinstance(intent, dict):
@@ -152,10 +148,7 @@ class TravelAgent:
 
         return skill.execute(intent_data)
 
-    def _generate_missing_information_response(
-        self,
-        missing_fields: dict,
-    ) -> str:
+    def _generate_missing_information_response(self, missing_fields: dict) -> str:
         """
         Generate a clarification request when required fields
         are missing.
@@ -170,10 +163,7 @@ class TravelAgent:
             f"Missing information: {field_names}."
         )
     
-    def _missing_information(
-        self,
-        skill_result: dict,
-    ) -> bool:
+    def _missing_information(self, skill_result: dict) -> bool:
         """
         Determine whether the selected skill is requesting
         additional information from the user.
@@ -186,10 +176,7 @@ class TravelAgent:
             True if required information is missing.
         """
 
-        return not (
-    "hotels" in skill_result
-    or "flights" in skill_result
-            )
+        return not ("hotels" in skill_result or "flights" in skill_result)
 
     def _generate_final_response(self, user_message: str, search_results: dict) -> str:
         

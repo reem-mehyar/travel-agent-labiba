@@ -6,6 +6,7 @@ class CurrencySkill:
     Converts prices in hotel/flight search results into the user's requested currency.
     """
     def convert_results(self, search_results: dict, target_currency: str, source_currency: str = "USD") -> dict:
+        
         if not target_currency or target_currency.upper() == source_currency.upper():
             return search_results
 
@@ -27,6 +28,7 @@ class CurrencySkill:
         return converted
 
     def _convert_hotel(self, hotel: dict, source: str, target: str) -> dict:
+        
         hotel = dict(hotel)
         for field in ("price_per_night", "total_price"):
             if hotel.get(field) is not None:
@@ -37,6 +39,7 @@ class CurrencySkill:
         return hotel
 
     def _convert_flight(self, flight: dict, source: str, target: str) -> dict:
+
         flight = dict(flight)
         if flight.get("price") is not None:
             try:
