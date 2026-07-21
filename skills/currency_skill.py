@@ -1,4 +1,4 @@
-from api.currency_api import convert_amount
+from api.currency_api import convert_amount, get_exchange_rate
 
 
 class CurrencySkill:
@@ -9,6 +9,14 @@ class CurrencySkill:
         
         if not target_currency or target_currency.upper() == source_currency.upper():
             return search_results
+
+        try:
+            get_exchange_rate(source_currency, target_currency)
+        except Exception:
+            result = dict(search_results)
+            result["currency_note"] = (f"'{target_currency}' is not a recognized currency. "
+            f"Showing prices in {source_currency} instead.")
+            return result
 
         converted = dict(search_results)
 
@@ -44,6 +52,6 @@ class CurrencySkill:
         if flight.get("price") is not None:
             try:
                 flight["price"] = convert_amount(flight["price"], source, target)
-            except (ValueError, Exception):
-                pass
+            except Exception:
+                flight["conversion_failed"] = True
         return flight
