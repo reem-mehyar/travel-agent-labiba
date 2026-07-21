@@ -17,7 +17,7 @@ def get_coordinates(city_name: str) -> dict:
     return {"latitude": top["latitude"], "longitude":
              top["longitude"], "name": top["name"], "country": top.get("country")}
 
-def get_weather_forecase(city_name: str, start_date: str, end_date: str) -> dict:
+def get_weather_forecast(city_name: str, start_date: str, end_date: str) -> dict:
 
     location = get_coordinates(city_name)
 
