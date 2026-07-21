@@ -104,8 +104,19 @@ replace the most contextually relevant field from the prior turn —
 typically whichever field was most recently discussed or is the subject
 of the correction — rather than filling in a different empty field.
 
+If a city name appears to be a minor typo or misspelling of a real, well-known
+city (e.g. "tokoy" for "Tokyo"), correct it to the standard spelling before
+returning it in departure_city/destination_city/location.
+
 If it's ambiguous which field the user means to correct, prefer leaving
 it as a new distinct value rather than guessing incorrectly.
+
+Supported skill values (use these exact strings, do not pluralize or modify them):
+- "hotel"
+- "flight"
+- "weather"
+- "unclear"
+- "none"
 
 # Output shape
 

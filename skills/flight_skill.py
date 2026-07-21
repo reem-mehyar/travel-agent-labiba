@@ -52,11 +52,13 @@ class FlightSkill:
         try:
             suggestions = autocomplete_flight_location(city_name)
         except RuntimeError:
-            return city_name
+            return {"code": city_name, "resolved_name": None}
         
         if suggestions:
             top_match = suggestions[0]
             airports = top_match.get("airports", [])
             if airports:
-                return airports[0].get("id", city_name)  
-        return city_name
+                return {"code": airports[0].get("id", city_name), 
+                        "resolved_name": top_match.get("name")}
+        
+        return {"code": city_name, "resolved_name": None,}

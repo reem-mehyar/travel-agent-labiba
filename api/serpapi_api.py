@@ -30,6 +30,7 @@ def search_flights(origin: str, destination: str, outbound_date: str, return_dat
         "departure_id": origin,
         "arrival_id": destination, 
         "outbound_date": outbound_date,
+        "currency": "USD",
     }
 
     if return_date:

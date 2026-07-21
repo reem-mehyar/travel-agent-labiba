@@ -22,7 +22,7 @@ for place in attractions:
     print(place.get("title"), "-", place.get("address"), "-", place.get("rating"))"""
 
 
-from api.currency_api import get_exchange_rate, convert_amount
+from api.serpapi_api import search_flights
 
-print(get_exchange_rate("USD", "EUR"))
-print(convert_amount(78, "USD", "EUR"))
+results = search_flights("NRT", "ICN", "2026-07-22")
+print(results)
