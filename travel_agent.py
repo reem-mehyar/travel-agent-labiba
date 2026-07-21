@@ -2,6 +2,7 @@ import json
 
 from api.openai_api import OpenAIClient
 from datetime import date
+from providers.service_provider import ServiceProvider
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
 from skills.currency_skill import CurrencySkill
@@ -26,14 +27,14 @@ class TravelAgent:
 
     def __init__(self) -> None:
 
-        self.openai_client = OpenAIClient()
+        self.openai_client = ServiceProvider.openai()
 
         self.skills = {
             "hotel": HotelSkill(),
             "flight": FlightSkill(),
             "weather": WeatherSkill(),
         }
-        self.currency_skill = CurrencySkill()
+        self.currency_skill = ServiceProvider.currency_skill()
         self.conversation_history = []
         self.pending_intent = {}
 

@@ -26,14 +26,4 @@ class ServiceProvider:
     @staticmethod
     def currency_skill():
         return CurrencySkill()
-    from providers.service_provider import ServiceProvider
-
-self.openai_client = ServiceProvider.openai()
-
-self.skills = {
-    "hotel": ServiceProvider.hotel_skill(),
-    "flight": ServiceProvider.flight_skill(),
-    "weather": ServiceProvider.weather_skill(),
-}
-
-self.currency_skill = ServiceProvider.currency_skill()
+    
