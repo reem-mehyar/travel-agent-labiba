@@ -14,11 +14,13 @@ class FlightSkill:
         if missing:
             return missing
 
-        origin_code = self._resolve_airport_code(intent_data["departure_city"])
-        destination_code = self._resolve_airport_code(intent_data["destination_city"])
+        origin_info = self._resolve_airport_code(intent_data["departure_city"])
+        destination_info = self._resolve_airport_code(intent_data["destination_city"])
+        origin_code = origin_info["code"]
+        destination_code = destination_info["code"]
         departure_date = intent_data["departure_date"]
         return_date = intent_data.get("return_date")
-
+        
         invalid_cities = []
         if len(origin_code) != 3:
             invalid_cities.append(f"departure city '{intent_data['departure_city']}'")
