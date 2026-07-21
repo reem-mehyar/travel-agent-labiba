@@ -5,7 +5,7 @@ from datetime import date
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
 from skills.currency_skill import CurrencySkill
-
+from skills.weather_skill import WeatherSkill
 from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT
 
 
@@ -26,7 +26,7 @@ class TravelAgent:
         
         self.openai_client = OpenAIClient()
 
-        self.skills = {"hotel": HotelSkill(), "flight": FlightSkill()}
+        self.skills = {"hotel": HotelSkill(), "flight": FlightSkill(), "weather": WeatherSkill()}
         self.currency_skill = CurrencySkill()
         self.conversation_history = []
         self.pending_intent = {}
@@ -176,7 +176,8 @@ class TravelAgent:
             True if required information is missing.
         """
 
-        return not ("hotels" in skill_result or "flights" in skill_result)
+        return not ("hotels" in skill_result or "flights" in skill_result or "weather" in skill_result
+)
 
     def _generate_final_response(self, user_message: str, search_results: dict) -> str:
         
