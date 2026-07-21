@@ -78,6 +78,12 @@ Your ONLY task is to convert the user's travel request into JSON.
 
 Never answer the user.
 
+Never explain anything.
+
+Never use markdown.
+
+Return ONLY one valid JSON object.
+
 You may receive the full conversation so far, not just the latest message.
 Use earlier turns to fill in fields not mentioned in the most recent message.
 If a field was already provided earlier and not contradicted, keep it.
@@ -85,20 +91,6 @@ If a field was already provided earlier and not contradicted, keep it.
 If the destination city in the latest message conflicts with a destination
 already established earlier in the conversation, treat this as a new,
 unrelated request — do not merge old fields into it.
-
-Never explain anything.
-
-Never use markdown.
-
-Return ONLY one valid JSON object.
-
-Supported skills:
-- hotel
-- flight
-- weather
-- unclear   (travel-related, but not enough detail to know if it's a hotel or flight request)
-- none      (not travel-related at all)
-- both      (the user explicitly wants both a hotel and a flight)
 
 Use "unclear" when the message is about travel/trip planning in general
 but doesn't specify whether the user wants a hotel, a flight, or both.
@@ -115,88 +107,47 @@ of the correction — rather than filling in a different empty field.
 If it's ambiguous which field the user means to correct, prefer leaving
 it as a new distinct value rather than guessing incorrectly.
 
-If the user explicitly mentions wanting both a flight and a hotel, return "both"
-and include all applicable fields from both the hotel and flight schemas in one object:
+# Output shape
+
+Always return every field below in a single flat JSON object — not nested
+per skill. Fields not relevant to the requested skill(s) should be null.
+
 {
-    "skill": "both",
-    "location": "",
-    "check_in": "",
-    "check_out": "",
+    "skills": [],
+    "location": null,
+    "check_in": null,
+    "check_out": null,
     "adults": 2,
-    "departure_city": "",
-    "destination_city": "",
-    "departure_date": "",
-    "return_date": "",
-    "passengers": 1
+    "departure_city": null,
+    "destination_city": null,
+    "departure_date": null,
+    "return_date": null,
+    "passengers": 1,
+    "start_date": null,
+    "end_date": null,
+    "currency": null
 }
 
-Hotel JSON
+Field notes:
+  If the weather request shares the same trip dates as a hotel/flight request
+  in the same message, reuse those dates for start_date/end_date too.
+- "currency" is not a skill — it's a modifier. If the user specifies a
+  currency (e.g. "in JOD", "in euros", "show prices in dollars"), extract
+  the 3-letter ISO currency code here regardless of which skills are requested.
+  If not mentioned, return null.
+- "location" is used for hotel requests AND weather requests — it represents
+  the city being asked about, regardless of which skill(s) are requested.
+- "start_date" / "end_date" are used for weather requests.
+  
+--------------------------------------------------
+# Rules
 
-{
-  "skill": "hotel",
-  "location": null,
-  "check_in": null,
-  "check_out": null,
-  "adults": 2
-}
-Weather JSON
-
-{
-  "skill": "weather",
-  "location": null,
-  "start_date": null,
-  "end_date": null
-}
-
-Flight JSON
-
-{
-  "skill": "flight",
-  "departure_city": null,
-  "destination_city": null,
-  "departure_date": null,
-  "return_date": null,
-  "passengers": 1
-}
-Examples
-
-User:
-What is the weather in London tomorrow?
-
-Output
-
-{
-  "skill": "weather",
-  "location": "London",
-  "start_date": "2026-07-22",
-  "end_date": "2026-07-22"
-}
-
-User:
-Show me the weather in Paris from August 1 to August 5.
-
-Output
-
-{
-  "skill": "weather",
-  "location": "Paris",
-  "start_date": "2026-08-01",
-  "end_date": "2026-08-05"
-}
-
-If the user specifies a currency (e.g. "in JOD", "in euros", "show prices in dollars"),
-extract the 3-letter ISO currency code into "currency". If not mentioned, return null.
-
-Rules
-
-- Never guess missing values.
-- Missing values must be null.
-- If the user gives a date without a year, assume the nearest future occurrence 
-  of that date relative to today's date.
+- Never guess missing values. Missing values must be null.
+- If the user gives a date without a year, assume the nearest future
+  occurrence of that date relative to today's date.
 - Dates must use YYYY-MM-DD.
 - Return ONLY valid JSON.
 """.strip()
-
 
 FINAL_RESPONSE_PROMPT = """
 You are the response generation engine of an AI Travel Agent.
