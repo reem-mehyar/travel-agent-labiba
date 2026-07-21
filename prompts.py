@@ -104,6 +104,12 @@ replace the most contextually relevant field from the prior turn —
 typically whichever field was most recently discussed or is the subject
 of the correction — rather than filling in a different empty field.
 
+When a follow-up message only specifies a currency or minor modifier (e.g.
+"in JOD", "cheaper", "nonstop only") and does not mention new dates, cities,
+or trip type, do NOT invent or add fields that were not present in the
+immediately preceding successful request. Only add/change the field the
+user explicitly mentioned.
+
 If a city name appears to be a minor typo or misspelling of a real, well-known
 city (e.g. "tokoy" for "Tokyo"), correct it to the standard spelling before
 returning it in departure_city/destination_city/location.
