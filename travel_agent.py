@@ -89,6 +89,7 @@ class TravelAgent:
 
         # 5. Execute the requested skill(s)
         skill_result = self._execute_skill(merged_intent)
+        
 
         # 6. Still missing fields -> remember progress, ask for the rest
         if self._missing_information(skill_result, requested_skills):

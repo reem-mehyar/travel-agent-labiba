@@ -34,8 +34,18 @@ class FlightSkill:
         validation_error = validate_dates(departure_date, return_date)
         if validation_error:
             return {"flights": [], "note": validation_error}
+        flight_data = search_flights(
+           origin_code,
+           destination_code,
+           departure_date,
+           return_date,
+                         )
         
-        raw_results = search_flights(origin_code, destination_code, departure_date, return_date)
+       
+        raw_results = flight_data["flights"]
+        
+        google_flights_url = flight_data["google_flights_url"]
+       
 
         cleaned_flights = [
             {
@@ -47,8 +57,10 @@ class FlightSkill:
             for f in raw_results
         ]
 
-        return {"flights": cleaned_flights}
-
+        return {
+        "flights": cleaned_flights,
+        "google_flights_url": google_flights_url,
+               }
     def _resolve_airport_code(self, city_name: str) -> str:
 
         try:

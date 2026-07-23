@@ -1,0 +1,652 @@
+{
+  "hotels": [
+    {
+      "name": "Atlantis - The Palm",
+      "price_per_night": "$296",
+      "total_price": "$1,480",
+      "rating": 4.7,
+      "property_token": "ChYIxZWB1JjIlsoFGgovbS8wMnI5aDBqEAE",
+      "booking_url": "https://www.atlantis.com/dubai/atlantis-the-palm?utm_source=googleplaces&utm_medium=location&utm_campaign=atp&utm_content=listing",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChYIxZWB1JjIlsoFGgovbS8wMnI5aDBqEAE&q=Dubai",
+      "booking_providers": [
+        {
+          "provider": "BookLogic",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw-hEV85lxYU1MTn3NdKbX61cOfqD-6cuZXlxv6LVZesQTfz2GVdditG8RJMWP6rTSGhDhLjGEHV8FHaSmfWQETZdguqBD1zg2TasdC0UlF81JnljNIA2TQU-dGkYyOIkhQIDzwI5VLHxWY0dpZAXep57dhHOixK99_ntQVXdYtawaws9Q_IjO8bL2PKDTT2g&pcurl=https://xrs.booklogic.net/ws/maxichannel/google-ari/partner-link?utm_source%3Dgoogle%26utm_content%3Dlocaluniversal%26utm_campaign%3D%26partner%3DDUB11842%26checkin%3D10-08-2026%26checkout%3D15-08-2026%26lang%3Den%26device%3Ddesktop%26user_country%3DCA%26adults%3D2%26children%3D0%26currency%3DUSD%26bookingReference%3DBookLogicOTAGBL%26userCountry%3DCA&s=AD1XQnmOWHAVJtZ0elh4xp73K05r&ap=1",
+          "official": false,
+          "price_per_night": "US$296",
+          "total_price": "US$1,480",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Agoda",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxaoEnl-xs2WdBdPlhJokKyyknWrdj9wk9e48iUjNnT51X2uW-Tr5m9ZHEm-msPC4cwf4AdwYe6vpFXDnoFI9cGa3ZDRyMNiYhGyMCL8DYVpeXvhBFwivgvoWUAIFVe03uSt8uxOa7TFflMI56vFZKV-XuiaX-LBYvIEkLFNRRAbtz6rSDoFtQvDFMOYQ&pcurl=https://www.agoda.com/partners/partnersearch.aspx?site_id%3D1917614%26CkInDay%3D10%26CkInMonth%3D08%26CkInYear%3D2026%26CkOutDay%3D15%26campaignid%3D%26CkOutMonth%3D08%26CkOutYear%3D2026%26SearchDateType%3Dselected%26NumberOfAdults%3D2%26LT%3D18%26NumberOfChildren%3D0%26childages%3D%26NumberOfRooms%3D1%26gsite%3Dlocaluniversal%26los%3D5%26PartnerCurrency%3DAED%26hid%3D159472%26RoomID%3D1318211610%26masterRoomId%3D50450718%26PriceTotal%3D1762.41%26PriceTax%3D345.94%26PriceFee%3D268.03%26RatePlan%3D8244c39c-b53e-60d9-d671-539d8754680c%26UserCountry%3DCA%26Currency%3DUSD%26UserDevice%3Ddesktop%26Verif%3Dfalse%26rr%3Drow_desktop%26audience_list%3D%26mcid%3D3038%26booking_source%3Dcpc%26adType%3D0%26mpt%3DT3hTUE5wa0Rrait5RVgrRHFvUEQyWUZPWnVDVGtqWjNhc0NLQmFpVEMzaVhZUHNrWTdiRU5LMXJhUXJLc2RIQ21HMkMvbzVKZENaag%26original_rr%3D%26gaClickSrc%3D%26clickType%3Dhotel%26lang%3Den%26pkgId%3DNoBreakfast_NoDinner_true&s=AD1XQnna9nvRGOexdKTPM-06g8xx&ap=1",
+          "official": false,
+          "price_per_night": "US$352",
+          "total_price": "US$1,762",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Billabook.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw9g5TnrEi4jzG7Pl7CQwMOjui10_0Hr66pePxNSokWW_jaz7AeYs4LmHLT8MpFrTeLx3bz8_EgBi5z4yItqIdPDvzFtLbcCAgbpnJxc8a6DDrfjqkxJbLKoTD0yS1qMfdmHv2XgL30Z66--HS9LbcEQivKoS0-zOL3181YtzOT6GegxxcomyhM&pcurl=https://www.billabook.com/hotel/2650095?pkg_id%3D019f8c70-8ab0-7614-871b-c19163d49e58%26rr%3Ddefault_r%26oc%3D2-0%26in%3D2026-08-10%26out%3D2026-08-15%26user_curr%3DUSD%26source%3Dfree-links%26campaign%3D%26user_country%3DCA%26device%3Ddesktop%26lang%3Den%26adults%3D2%26children%3D0%26%26p%3D1717.00%26pt%3D81.76%26pf%3D0.00&s=AD1XQnnizejOHEsN0Kzxvl36MvPM&ap=1",
+          "official": false,
+          "price_per_night": "US$343",
+          "total_price": "US$1,717",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Booking.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjikvzwyeeVAxV-Ja0GHTwWGtwYACICCAEQTxoCcHY&co=1&ase=2&gclid=EAIaIQobChMI4pL88MnnlQMVfiWtBh08FhrcEAoYBCABEgKPqfD_BwE&cid=CAAS0gHkaHggQKW4n86pjdO_DkNdHmyAjOAfBnOddpoIIWREO701XxeNgNQuZaLOIeaXXq4LQIJi9QpXs7wvoWwM9EuPnspHdQq_YNOIK5xipKzvpONJyWNFqPObqvbcmhUl4lQq8VeURAhDfdxysE8keKkYzh-X3iock5NeTI96OKt6lJOo-kBHhNOpWld0rhUErE8cmW2ZnC5m5ndR93hPCAZzJyJ5isCCJl1A0vXqf-258CWCVWHJQpDrRhFbHnBFtuh6U0Y5BySwnYpT3mm2boikkRk&category=acrcp_v1_48&sig=AOD64_2oP8UQnKiPke4Pv-y2GV-cfVllIA&adurl",
+          "official": false,
+          "price_per_night": "$404",
+          "total_price": "$2,020",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Trip.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjikvzwyeeVAxV-Ja0GHTwWGtwYACICCAEQORoCcHY&co=1&ase=2&gclid=EAIaIQobChMI4pL88MnnlQMVfiWtBh08FhrcEAoYBiABEgKbzfD_BwE&cid=CAAS0gHkaHggQKW4n86pjdO_DkNdHmyAjOAfBnOddpoIIWREO701XxeNgNQuZaLOIeaXXq4LQIJi9QpXs7wvoWwM9EuPnspHdQq_YNOIK5xipKzvpONJyWNFqPObqvbcmhUl4lQq8VeURAhDfdxysE8keKkYzh-X3iock5NeTI96OKt6lJOo-kBHhNOpWld0rhUErE8cmW2ZnC5m5ndR93hPCAZzJyJ5isCCJl1A0vXqf-258CWCVWHJQpDrRhFbHnBFtuh6U0Y5BySwnYpT3mm2boikkRk&category=acrcp_v1_48&sig=AOD64_27X3DaaYAGBvZWV9AtA4u0jnkmQA&adurl",
+          "official": false,
+          "price_per_night": "$404",
+          "total_price": "$2,020",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Expedia.ca",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjikvzwyeeVAxV-Ja0GHTwWGtwYACICCAEQARoCcHY&co=1&ase=2&gclid=EAIaIQobChMI4pL88MnnlQMVfiWtBh08FhrcEAoYAiABEgJBWvD_BwE&cid=CAAS0gHkaHggQKW4n86pjdO_DkNdHmyAjOAfBnOddpoIIWREO701XxeNgNQuZaLOIeaXXq4LQIJi9QpXs7wvoWwM9EuPnspHdQq_YNOIK5xipKzvpONJyWNFqPObqvbcmhUl4lQq8VeURAhDfdxysE8keKkYzh-X3iock5NeTI96OKt6lJOo-kBHhNOpWld0rhUErE8cmW2ZnC5m5ndR93hPCAZzJyJ5isCCJl1A0vXqf-258CWCVWHJQpDrRhFbHnBFtuh6U0Y5BySwnYpT3mm2boikkRk&category=acrcp_v1_48&sig=AOD64_3vI4Xi67d0C6OSl4cIN8R0IwlRaQ&adurl",
+          "official": false,
+          "price_per_night": "$462",
+          "total_price": "$2,309",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Hotels.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjikvzwyeeVAxV-Ja0GHTwWGtwYACICCAEQPBoCcHY&co=1&ase=2&gclid=EAIaIQobChMI4pL88MnnlQMVfiWtBh08FhrcEAoYAyABEgIgdPD_BwE&cid=CAAS0gHkaHggQKW4n86pjdO_DkNdHmyAjOAfBnOddpoIIWREO701XxeNgNQuZaLOIeaXXq4LQIJi9QpXs7wvoWwM9EuPnspHdQq_YNOIK5xipKzvpONJyWNFqPObqvbcmhUl4lQq8VeURAhDfdxysE8keKkYzh-X3iock5NeTI96OKt6lJOo-kBHhNOpWld0rhUErE8cmW2ZnC5m5ndR93hPCAZzJyJ5isCCJl1A0vXqf-258CWCVWHJQpDrRhFbHnBFtuh6U0Y5BySwnYpT3mm2boikkRk&category=acrcp_v1_48&sig=AOD64_3MaiLuCAaYLJaAW0ytLHR8GJT8MA&adurl",
+          "official": false,
+          "price_per_night": "$462",
+          "total_price": "$2,309",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Qantas Hotels",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswvjRPr9aicfu2-5VFGcHTWeAtTb5GsjNnF-SRbH3o785sUAnf2rZCvcQbUblzs5R0iPxqwl-uZq4d1mSLvdtAtLZoHmciXdEYq_xobGAyNfnwg9ofsx_gfoE0_b7nKSMqrqYExpunRd211j3iGRkKJLERUO37vKTkonvQ2VEjYzwqIkdJE&pcurl=https://www.qantas.com/hotels/properties/22657?adults%3D2%26children%3D0%26infants%3D0%26checkIn%3D2026-08-10%26checkOut%3D2026-08-15%26utm_campaign%3DGoogleHotels%26adType%3D0%26utm_medium%3Dorganic-search%26utm_source%3DGoogle-Hotels%26utm_term%3D22657%26hotelID%3D22657%26hotel_campaign%3D&s=AD1XQnmfpXfVzIk6ZDhbKALo6U8f&ap=1",
+          "official": false,
+          "price_per_night": "US$461",
+          "total_price": "US$2,307",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Prestigia.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osy-BHs-xZH0CTcymjLHtHjd3EyUg4v-jQb0x0be5elxUrZdcPxzWQwYjTz7lLjKNJSAV6EpJfEZ-BtChXe1wZnYRZLOZkYUsgu5J-Fdgvvro1hHZ1gbW59u2_LNNtxYrGTCld25h3BZ2S6hNZoCLo8yzIK5ztitufAJxT2dwXU9pTzYQ6B8s7Gl&pcurl=https://www.prestigia.com/en/produit.php?idTarget%3D1600%26arrivee%3D2026-08-10%26depart%3D2026-08-15%26pid%3D70%26a%3D1000129%26guestsParams%3DW3siYWR1bHRzIjoyLCJjaGlsZHJlbiI6MCwiYWdlcyI6W119XQ%3D%3D%26dev%3D8%26pv%3DMjQwNi41OHw1NDEuNTB8MzYuODl8ZmFsc2U%3D%26curr%3DUSD%26verif%3Dfalse%26ad_click%3Dfalse%26campaign_id%3D%26src%3D&s=AD1XQnmf_GqRgv7JwG-XGHfcbJSr&ap=1",
+          "official": false,
+          "price_per_night": "US$424",
+          "total_price": "US$2,119",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Clicktrip.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszfOaunwO5ijAN9Xyo_BY_r87SgMVW17y0pcsvfoLMwQtw1h5B2mDR01yhijD4qmcoV4Ic_Evpjk8b1ktHJyzJpMjYOX6G-2Dwhy-ZXiL-Nd9Q8F2Vmt0q6kBZgoV-CrhmNPxerfaKcBwQ3I5a-OtcwBa37wJ3Shr76YroXtf84YQ-DqNuinU_KRsSXr133hR70XjifOLE&pcurl=https://clicktrip.com/hotels/details/oqqnqkbmWL3vBBEPX66wyUS232CNZKM1rGEH55EbAKKvPgEv3FwwRvaGoG9odywkoW5APihz8YUONz6IfqT12A3iWyreXApdFJrYPg6SRvNA38ybrC4vS69C33mlOLbz0?locale%3Den%26currency%3DUSD%26pos%3DCA%26date_type%3Dselected%26taf%3D0NnGJq0yaN8ky081WX6Lefixo3HGZhjb4Gv8wBtEY0rWO_9nh89Fywxy3neqas630%26verification%3Dfalse%26clk_src%3D%26utm_source%3Dgha%26rate_rule_id%3D&s=AD1XQnnGPLKpjX5uDcmqvawb9tG0&ap=1",
+          "official": false,
+          "price_per_night": "US$424",
+          "total_price": "US$2,120",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Zzzello",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswGwjKg2HA3-RNIkXacYBOg0iKZ7i7xKGmFJP2eSHUQ3kjpddehKVJ1NFsCyIzCWcmIrA_u_6auRR5GjdXekDYoKWZwHK-8JYqUlRVadfCV_-ZOrixEDyUuCzLL3m_FPHf2iZtqps2PrFJ2T8gWGpSOR0dQ3f_miNHOFG2JbMSL8Y_2Px4jS_K6WInlv1DdEZq-jS5N1o0&pcurl=https://zzzello.com/google-hotels?hotelID%3Dlp42f57%26checkinDay%3D10%26checkinMonth%3D08%26checkinYear%3D2026%26nights%3D5%26adults%3D2%26children%3D0%26sessionId%3Dgoogle-3e11445bb6944a3b59e243d68a3c508a%26ratePlanId%3D7876307-BI-RFN%26currency%3DUSD%26language%3Den&s=AD1XQnmFnWQlmbSJ7WBVDiaDS3mM&ap=1",
+          "official": false,
+          "price_per_night": "US$464",
+          "total_price": "US$2,320",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Atlantis - The Palm",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjikvzwyeeVAxV-Ja0GHTwWGtwYACICCAEQFBoCcHY&co=1&ase=2&gclid=EAIaIQobChMI4pL88MnnlQMVfiWtBh08FhrcEAoYASABEgJaE_D_BwE&cid=CAAS0gHkaHggQKW4n86pjdO_DkNdHmyAjOAfBnOddpoIIWREO701XxeNgNQuZaLOIeaXXq4LQIJi9QpXs7wvoWwM9EuPnspHdQq_YNOIK5xipKzvpONJyWNFqPObqvbcmhUl4lQq8VeURAhDfdxysE8keKkYzh-X3iock5NeTI96OKt6lJOo-kBHhNOpWld0rhUErE8cmW2ZnC5m5ndR93hPCAZzJyJ5isCCJl1A0vXqf-258CWCVWHJQpDrRhFbHnBFtuh6U0Y5BySwnYpT3mm2boikkRk&category=acrcp_v1_48&sig=AOD64_32zJv3pnZNbX7MHGnk9vZSm4nrqg&adurl",
+          "official": true,
+          "price_per_night": "$359",
+          "total_price": "$1,794",
+          "free_cancellation": false
+        },
+        {
+          "provider": "HomeToGo",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjikvzwyeeVAxV-Ja0GHTwWGtwYACICCAEQWRoCcHY&co=1&ase=2&gclid=EAIaIQobChMI4pL88MnnlQMVfiWtBh08FhrcEAoYBSABEgJpzvD_BwE&cid=CAAS0gHkaHggQKW4n86pjdO_DkNdHmyAjOAfBnOddpoIIWREO701XxeNgNQuZaLOIeaXXq4LQIJi9QpXs7wvoWwM9EuPnspHdQq_YNOIK5xipKzvpONJyWNFqPObqvbcmhUl4lQq8VeURAhDfdxysE8keKkYzh-X3iock5NeTI96OKt6lJOo-kBHhNOpWld0rhUErE8cmW2ZnC5m5ndR93hPCAZzJyJ5isCCJl1A0vXqf-258CWCVWHJQpDrRhFbHnBFtuh6U0Y5BySwnYpT3mm2boikkRk&category=acrcp_v1_48&sig=AOD64_0-O8z0ouBlqx0I3ncF-SFkIDbsCw&adurl",
+          "official": false,
+          "price_per_night": "$352",
+          "total_price": "$1,762",
+          "free_cancellation": true
+        }
+      ]
+    },
+    {
+      "name": "JW Marriott Marquis Hotel Dubai",
+      "price_per_night": "$115",
+      "total_price": "$575",
+      "rating": 4.6,
+      "property_token": "ChUIrOmZudHNsKo4GgkvbS8wYnk3dDgQAQ",
+      "booking_url": "https://www.marriott.com/en-us/hotels/dxbjw-jw-marriott-marquis-hotel-dubai/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChUIrOmZudHNsKo4GgkvbS8wYnk3dDgQAQ&q=Dubai",
+      "booking_providers": [
+        {
+          "provider": "JW Marriott Marquis Hotel Dubai",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwi86NTuzueVAxVmSv8BHQlOEgcYACICCAEQAxoCbWQ&co=1&gclid=EAIaIQobChMIvOjU7s7nlQMVZkr_AR0JThIHEAoYASABEgKIb_D_BwE&cid=CAAS0gHkaJBqyqXXhu3nf6QbjKaTUMyuip69qFG4lf7sIxDZYvDBhz16FSgbRsvndn70aZcaZuj2zEy6ED2P-RDmPGhtfdh85t4BzGcBYqR1nXkkO382aMolCI3BQctsXnDLCTFMCeFRZW7jtNEcp-fi6zrZd9rZedHTLjZ9QLwOcRyNvlGRgiCXBPhFJJyWSI4IHdhm2MNb0pmdUEO0ShI2nBkoe-fSFp0axrd-DelPk2vlBl3Qo9Bb1MF-U70oN0eAk5spVc5IvqEnxXgH0qhsinWOHXA&sig=AOD64_0BQ75unfmCufExembHDlnr0JLZbQ&adurl",
+          "official": true,
+          "price_per_night": "$140",
+          "total_price": "$699",
+          "free_cancellation": false
+        },
+        {
+          "provider": "trivago DEALS",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsyrgFMRjuneBpRL292Zln_-rRoJm4D4_852h0V-XX_pijlX-t4PJBrw8xwUAVm2oY9B-hHywjOPIOFShJvFnK4OOTEvT7mU-zFYdyHKYZG0EnLYa29zMmZaYwgxQT6Rw_2OCxAhuB1xiUhsgnnXbK0cC7Xg0i8BQnxzjP9jQ2lLcxZMLjPNMYWDsjpyDWh0yFS7OSCyhbyh&pcurl=https://www.trivago.deals/hotels/united-arab-emirates_du_dubai/325339_jw-marriott-marquis-hotel-dubai?checkIn%3D2026-08-10%26checkOut%3D2026-08-15%26placeId%3DH325339%26campaignName%3DTrivagoDeals_Google_US%26currencyCode%3DUSD%26dealKey%3DCAIQjQYiDAiTqYXTBhCUxO7XAipODQAA5kIVAEANRCWambNBLfYoz0IwATiZBEWkwA9ESgwIj6mF0wYQuJqJxwNiCkRlbHV4ZSBLaW5oAoIBAI0BzczlQqAB38OmwgKoAcgGMI0GONvtE0DK9Q9IBVIIJPiOk47JgNxYyAZiAwoBIA%26countryCode%3DUS%26languageCode%3Den%26rule%3DGoogle_US%26site%3Dlocaluniversal%26ads%3D%26origin%3D31%26priceDisplayedTotal%3D575.01%26priceDisplayedTax%3D126.03%26device%3Ddesktop%26adults%3D2%26children%3D0&s=AD1XQnm75R7hPQHrAx9B9-1wRVKL&ap=1",
+          "official": false,
+          "price_per_night": "$115",
+          "total_price": "$575",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Traveluro",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Oswv3werejw-v1ogypIfVhHsckYkOGVxoOTJta92Icy8p6H2ystKC9J0jwi4NeL07i41SrooUNNikbQwjcgrYkVQ7LIahDKtGEFy75d8p6tNhVF5PGSFmrKLBt4NQp7KUdkP40MleCeEp9LoFrDD0JDKOB3cZmJTt6o19IJ2-lBgkmfDS10N7LNp&pcurl=https://www.traveluro.com/hotels/united-arab-emirates_du_dubai/325339_jw-marriott-marquis-hotel-dubai?checkIn%3D2026-08-10%26checkOut%3D2026-08-15%26placeId%3DH325339%26campaignName%3DGoogle_US%26currencyCode%3DUSD%26dealKey%3DCAIQqwEiDAjg0YXTBhD4h7eaAipQDQAA6EIVAIAORCUzM7VBLT2K0EIwATifBkVc_xBESgwIuNCF0wYQmP-_7AJiCkRlbHV4ZSBTdGFoAXCdAYIBAI0BzUznQqABy7CNEKgByAYwlwI42-0TQMr1D0gFUgjDfTZm838AwVjIBmIDCgEg%26countryCode%3DUS%26languageCode%3Den%26rule%3DGoogle_US%26site%3Dlocaluniversal%26origin%3D31%26ads%3D%26priceDisplayedTotal%3D579.99%26priceDisplayedTax%3D126.92%26device%3Ddesktop%26adults%3D2%26children%3D0&s=AD1XQnmdxqbCOvc6azOB9OPoLMLr&ap=1",
+          "official": false,
+          "price_per_night": "$116",
+          "total_price": "$580",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Super.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osy2CF0Zz9g0wMHfqCHaEH6m-FaAVYyNRpFuTW4gzxx_pVa3cFr8T1kSsuR2HzYXwtN7XnC9obxM0QYYqNHdlIY0zV0qT2d3NTLrenkCmZo4YVqCKEVCwWhBBwTRUPUAxU34_xWJ3AFGylArXkN8PC8itkJUfYTxoTeMagsyQ6JLjE7v5HQfMYCy1Q&pcurl=https://www.super.com/travel/transition/?data%3Dprice%3D543.71%2526total_price%3D570.89%2526retail_price%3D754.77%2526retail_total_price%3D792.5%2526surcharge%3D27.23%2526request_id%3D10990210128946624512%2526ps%3D1642246410%2526pb%3DA5Shep1Qayzao_TiSvSt1vUseN-gKkORyxR6Jf1E0htlRkyPgkoc8QZXjyoJEhceKWoQns90jxvlegYDQN-pXzYT9A-lk_unchsVU-cdFTcEUgVCN2pPZHvbb8ZvPr8U8taKYHfQVUb2R_nYnnr0brqBFI8PZAoMv13gfnBh6Eu6vph_3hymi2oZG6axO5YDJMGN2eoflaCGhQOemkUkYreThiGYY9VGYL4PQTG17rxWDR8lqC95q4Vpx1RetjRgDs2qncH7fsBlJBQvJGxI05sdlmeKZQ64uwkDWp_WYjgHlFCUaWjXYR6clcFcqKLoQ7fbTatSgqp44UKhSnEd3-yol4_FOjHNH9FMVQbWZ4qcqkh1U-u5KdwI-vBXceygXmq66tYVYkd70GOcKJTMaWhW_HpPaameUc3PnUo5mJzBGVFAhvKMQyhZENH0j50OjNSWLHvFeg6izDD5HZHcW1oYEXFfRnguhFyroZRRm5jO7sWNqjNnMuS2YeoVtXJwJYZyHSNMpDkQscJxCoiBshsSn1qjIpMYAYsTlCAh0Rc%25253D%2526gha_pull_request%3DTrue%2526alwd_rand%3Dfalse%2526gt%3D1784759705%2526sg%3DSWB4a%2526sid%3DGHA_MD8%2526cmab_id%3D33%2526ib%3Dfalse%2526s2b%3Dm0%2526all_inclusive%3Dfalse%26utm_source%3Dgha%26utm_content%3Dlocaluniversal%26currency%3DUSD%26user_country%3DUS%26verification%3Dfalse%26rate_rule_ids%3D%26date_type%3Dselected%26rate_rule_id%3Dsignedout_desktop%26display_currency%3DUSD%26display_all_inclusive_price%3D598.12%26checkin_at%3D2026-08-10%26checkout_at%3D2026-08-15%26provider_hotel_id%3D10004326873%26provider%3Dean%26num_adults%3D2%26children%3D%5B%5D%26hotel_campaign%3D%26utm_campaign%3D%26user_locale%3Den-US%26user_list_id%3D%26utm_medium%3Dorganic%26utm_id%3Dgha_organic&s=AD1XQnk3fkV6HXyvm6vFFNL0t6bB&ap=1",
+          "official": false,
+          "price_per_night": "$120",
+          "total_price": "$598",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Stayforlong.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osx7KuKd4zMhaxFXbmFh5azaoQQ3gRoU-oQaM3j4SnAkmOmTQvA66cm-sQS4PbNz7bo3Cmy0Zcl0ZL3TLJ5FHLBhzyT6dUMgAHfERWtXmX3-x6QXUrYeiZKuSGIUBdGW9Ndajk6tq4Pu2DMdEuykkbnHyN2YsENpXOgSZwF3Hga0rNGmeZM24-zHkCconQ&pcurl=https://www.stayforlong.com/hotel-detail/31595?checkin%3D2026-08-10%26checkout%3D2026-08-15%26adults%3D2%26metadevice%3Ddesktop%26aid%3Dgha%26market%3Dus%26lang%3Den%26total%3D595%26query_type%3Dpull%26ch%3D0%26adclick%3Dfree%26defaultdate%3Dfalse%26googlesite%3Dlocaluniversal%26p%3Dd5f31db37e629924f98da415261725b8%26rate_token%3Dv2.5236effe2a6d087cf250a0e0cc207515%26source%3Dmeta&s=AD1XQnkfK_J4isy5jOBlEjbut4Oe&ap=1",
+          "official": false,
+          "price_per_night": "$124",
+          "total_price": "$622",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Agoda",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszM-CkK7uKPfUEEZU3vr6QqZ6whmAcz7TIx_x_Kzhk1J3OOU8_3CFN77QGFa_XjBGYJqaMdCNZX7h_0bCyAzlZmWk3JjOdwSYa3nAoU8X3EEfugvhsm2dt5HPfOCdGLVG1OTCBMDsj7txD-dQ8p1ACadM5aWu645tzZILWVmiyAIRH37iV_B2TkcFK_kA&pcurl=https://www.agoda.com/partners/partnersearch.aspx?site_id%3D1917614%26CkInDay%3D10%26CkInMonth%3D08%26CkInYear%3D2026%26CkOutDay%3D15%26campaignid%3D%26CkOutMonth%3D08%26CkOutYear%3D2026%26SearchDateType%3Dselected%26NumberOfAdults%3D2%26LT%3D18%26NumberOfChildren%3D0%26childages%3D%26NumberOfRooms%3D1%26gsite%3Dlocaluniversal%26los%3D5%26PartnerCurrency%3DAED%26hid%3D399762%26RoomID%3D4785705%26masterRoomId%3D4785705%26PriceTotal%3D698.52%26PriceTax%3D150.53%26PriceFee%3D54.80%26RatePlan%3De0ef216a-0364-e1aa-c1f2-56d4ea3c800d%26UserCountry%3DUS%26Currency%3DUSD%26UserDevice%3Ddesktop%26Verif%3Dfalse%26rr%3Drow_desktop%26audience_list%3D%26mcid%3D29002%26booking_source%3Dcpc%26adType%3D0%26mpt%3DTjBWRWVQS09sVE1OTU9pU2hyUFlZRXFaUlo3bGZIZ1lyTmNiM0pVeU84Vk5uZUFnd1BKNVBWODRPVWtWbVBOUHZUYWQxWEtvVVlISw%26original_rr%3D%26gaClickSrc%3D%26clickType%3Dhotel%26lang%3Den%26pkgId%3DNoBreakfast_NoDinner_true&s=AD1XQnlPJV2TC8yFDafPinULUvIY&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$699",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Billabook.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsyJwDL5F1h9BcIM1DUBXCdjM5edN_MYaTvfZTjNQTOXg9fbYogGrt8-gTF_ErzJzDLE96DxDm7kXwDt08plFZG0rqdLA-MxtMnmBc9XF157FB9orP19B31flmH9pTW7q3SGZJcBz3GpNGG62AVQ5wVQkSZlekHWaZTlh1P0BtnPQucd7TPNU0nh&pcurl=https://www.billabook.com/hotel/2131868?pkg_id%3D019f8869-a1a5-77bc-82b6-2a2b32c1ac0f%26rr%3Ddefault_n%26oc%3D2-0%26in%3D2026-08-10%26out%3D2026-08-15%26user_curr%3DUSD%26source%3Dfree-links%26campaign%3D%26user_country%3DUS%26device%3Ddesktop%26lang%3Den%26adults%3D2%26children%3D0%26%26p%3D627.00%26pt%3D29.86%26pf%3D0.00&s=AD1XQnkQ71XWZjkNvaruTxQuEca2&ap=1",
+          "official": false,
+          "price_per_night": "$125",
+          "total_price": "$627",
+          "free_cancellation": false
+        },
+        {
+          "provider": "rehlat.co",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxTygcAvRo_Rgf4eSw7cWcJbj1onbgzeB8PuTgDRPFLf8k4qhGlU2HxardwwzWKi7-vULciDJOjUWuO6jHzUGl7dr5hK5vyybqrhjBbUvW0bI5Ix6PZhbbTyXbDKBWoEt7IsqtzHtj3HSaRDP4sNuqgZnCMCfsxVB8HtK8Dq4Zwd60A86L5&pcurl=https://www.rehlat.co/en/cheap-hotels/profile/JW-Marriott-Marquis-Hotel-Dubai-1404670?encrypted_payload%3DBAtaxAHI113M28LIAbaseAHI514M929LIAgpfAHI0LIAisJtgxAHI1LIAcAHI2081LIAciAHIA2026K08K10ALIAcoAHIA2026K08K15ALIAhcAHI1404670LIAshcAHIA38801ALIArAHIEBAaAHI2LIAcdAHI0LIAcdaAHIEFLIAtpAHI1CFLIAsiAHIA42ALIAskAHIAALIAcldAHIAGoogleALIAspAHI520LIAfpAHI628M209LIAmpAHI654M384LIAscAHIAeurALIAdtAHIA202607230056AC%26CustomerCountry%3DUS%26Currency%3DUSD%26Device%3Ddesktop%26identifier%3D4b9f6d22-f7d6-4da2-aae1-ee3521125df4__2026-07-23T00:56:21%26utm_source%3DGoogleHotel%26utm_medium%3DMetaHotels%26utm_campaign%3DGoogleMetaHotels&s=AD1XQnlGklOtw7-x9mz8SQX6r_Bz&ap=1",
+          "official": false,
+          "price_per_night": "$126",
+          "total_price": "$628",
+          "free_cancellation": true
+        },
+        {
+          "provider": "Expedia.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwi86NTuzueVAxVmSv8BHQlOEgcYACICCAEQGRoCbWQ&co=1&gclid=EAIaIQobChMIvOjU7s7nlQMVZkr_AR0JThIHEAoYAiABEgLLoPD_BwE&cid=CAAS0gHkaJBqyqXXhu3nf6QbjKaTUMyuip69qFG4lf7sIxDZYvDBhz16FSgbRsvndn70aZcaZuj2zEy6ED2P-RDmPGhtfdh85t4BzGcBYqR1nXkkO382aMolCI3BQctsXnDLCTFMCeFRZW7jtNEcp-fi6zrZd9rZedHTLjZ9QLwOcRyNvlGRgiCXBPhFJJyWSI4IHdhm2MNb0pmdUEO0ShI2nBkoe-fSFp0axrd-DelPk2vlBl3Qo9Bb1MF-U70oN0eAk5spVc5IvqEnxXgH0qhsinWOHXA&sig=AOD64_0IgLWPi7fw0wglPsbjDv9ckfTuJg&adurl",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Booking.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsypaVbuV9po5ljBfkb9esULoT1c74B_MGXlfCbT0M9hNwk2xEOWvFwKjp-8B7x-N4rSeqvPWPRfmXZG6hdL5qORXnZTPK9rxEWR8EbosTlBB2grW8-U3zpoPZQC8Xsn4MacCVEyW-fh1b3P60I07oquW1RmUDOe_QKOiTMYq0z9jVEnlgaS1BqDGFMLUDJg2VXt0w&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D445906%26highlighted_hotels%3D445906%26dest_type%3Dhotel%26checkin%3D2026-08-10%26checkout%3D2026-08-15%26group_adults%3D2%26req_adults%3D2%26show_room%3D44590601_94467758_2_2_0_8113%26lang%3Den%26selected_currency%3DUSD%26exrt%3D0.27229410%26ext_price_total%3D698.52%26ext_price_tax%3D150.53%26xfc%3DAED%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26no_rooms%3D1%26ts%3D1784755694%26edgtid%3DwBv08tmTTV2vcDCEL8YYvA%26efpc%3DIBK1CiVlsxoy%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DUS%26utm_term%3Dhotel-445906%26utm_content%3Ddev-desktop_los-5_bw-18_dow-Monday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-10_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20260810_ppt-%26aid%3D2127486%26label%3Dmetagha-link-LUUS-hotel-445906_dev-desktop_los-5_bw-18_dow-Monday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-10_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20260810_ppt-&s=AD1XQnkEYyH-BXF8ZLuWlpK3eRYt&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$699",
+          "free_cancellation": false
+        },
+        {
+          "provider": "KAYAK.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwi86NTuzueVAxVmSv8BHQlOEgcYACICCAEQARoCbWQ&co=1&gclid=EAIaIQobChMIvOjU7s7nlQMVZkr_AR0JThIHEAoYBiABEgJ0l_D_BwE&cid=CAAS0gHkaJBqyqXXhu3nf6QbjKaTUMyuip69qFG4lf7sIxDZYvDBhz16FSgbRsvndn70aZcaZuj2zEy6ED2P-RDmPGhtfdh85t4BzGcBYqR1nXkkO382aMolCI3BQctsXnDLCTFMCeFRZW7jtNEcp-fi6zrZd9rZedHTLjZ9QLwOcRyNvlGRgiCXBPhFJJyWSI4IHdhm2MNb0pmdUEO0ShI2nBkoe-fSFp0axrd-DelPk2vlBl3Qo9Bb1MF-U70oN0eAk5spVc5IvqEnxXgH0qhsinWOHXA&sig=AOD64_3FcpOJ5vV-TMkMcC3RlP9uozXHAA&adurl",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$699",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Priceline",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwi86NTuzueVAxVmSv8BHQlOEgcYACICCAEQTBoCbWQ&co=1&gclid=EAIaIQobChMIvOjU7s7nlQMVZkr_AR0JThIHEAoYBCABEgLgavD_BwE&cid=CAAS0gHkaJBqyqXXhu3nf6QbjKaTUMyuip69qFG4lf7sIxDZYvDBhz16FSgbRsvndn70aZcaZuj2zEy6ED2P-RDmPGhtfdh85t4BzGcBYqR1nXkkO382aMolCI3BQctsXnDLCTFMCeFRZW7jtNEcp-fi6zrZd9rZedHTLjZ9QLwOcRyNvlGRgiCXBPhFJJyWSI4IHdhm2MNb0pmdUEO0ShI2nBkoe-fSFp0axrd-DelPk2vlBl3Qo9Bb1MF-U70oN0eAk5spVc5IvqEnxXgH0qhsinWOHXA&sig=AOD64_3lEw7ScjqBWBlQoXo-FxkHo8TeMw&adurl",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Hotels.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwi86NTuzueVAxVmSv8BHQlOEgcYACICCAEQOxoCbWQ&co=1&gclid=EAIaIQobChMIvOjU7s7nlQMVZkr_AR0JThIHEAoYAyABEgJpSvD_BwE&cid=CAAS0gHkaJBqyqXXhu3nf6QbjKaTUMyuip69qFG4lf7sIxDZYvDBhz16FSgbRsvndn70aZcaZuj2zEy6ED2P-RDmPGhtfdh85t4BzGcBYqR1nXkkO382aMolCI3BQctsXnDLCTFMCeFRZW7jtNEcp-fi6zrZd9rZedHTLjZ9QLwOcRyNvlGRgiCXBPhFJJyWSI4IHdhm2MNb0pmdUEO0ShI2nBkoe-fSFp0axrd-DelPk2vlBl3Qo9Bb1MF-U70oN0eAk5spVc5IvqEnxXgH0qhsinWOHXA&sig=AOD64_0fb9tEzx6rYIqopzTiM1RWGhl0Sw&adurl",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Qantas Hotels",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osyldd0wODOR35OA-9gsUoPqcXNNKb10JtjiSptI75M_W4jzIN1yIE_glQGM4HkycNPxfMGMSzry5dnTVj-fc3hC-9o22Yp1maAes1usfVfEXtedyfPyWOubsd3vqmHzJXcblzF0sLNkF1wTMxlL8hb58HN-joWafDTCgMpRpLpH4dSndSCC&pcurl=https://www.qantas.com/hotels/properties/103815?adults%3D2%26children%3D0%26infants%3D0%26checkIn%3D2026-08-10%26checkOut%3D2026-08-15%26utm_campaign%3DGoogleHotels%26adType%3D0%26utm_medium%3Dorganic-search%26utm_source%3DGoogle-Hotels%26utm_term%3D103815%26hotelID%3D103815%26hotel_campaign%3D&s=AD1XQnnQhYKwO1ikcAgcf7Cexgc0&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Travelocity.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwi86NTuzueVAxVmSv8BHQlOEgcYACICCAEQKhoCbWQ&co=1&gclid=EAIaIQobChMIvOjU7s7nlQMVZkr_AR0JThIHEAoYBSABEgIyQPD_BwE&cid=CAAS0gHkaJBqyqXXhu3nf6QbjKaTUMyuip69qFG4lf7sIxDZYvDBhz16FSgbRsvndn70aZcaZuj2zEy6ED2P-RDmPGhtfdh85t4BzGcBYqR1nXkkO382aMolCI3BQctsXnDLCTFMCeFRZW7jtNEcp-fi6zrZd9rZedHTLjZ9QLwOcRyNvlGRgiCXBPhFJJyWSI4IHdhm2MNb0pmdUEO0ShI2nBkoe-fSFp0axrd-DelPk2vlBl3Qo9Bb1MF-U70oN0eAk5spVc5IvqEnxXgH0qhsinWOHXA&sig=AOD64_0iadXKxryP_9dw71wHOxjPN9DqwA&adurl",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Orbitz.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszugFx8-D_SOZ27enP2wR1rS7WGf0HyzIsa_hynPIgrgs52WIRZfO81accfJCCIaKnwSrld0ggsa3N3G0FsYAkpmo6oXUqaspKXKsJA6eZvcZk_d0sBfSh46YurTqVENCt3wfsslWX-utsNe-E1ZaD1XrIzaGSnZ2tiSS9ouCgVO7BrgIenb_WzmT8ljVg&pcurl=https://www.orbitz.com/Hotel-Search?selected%3D5399338%26startDate%3D2026-08-10%26endDate%3D2026-08-15%26adults%3D2%26children%3D%26MDPCID%3DORBITZ-US.META.HPA.ORGANIC-desktop.HOTEL%26MDPDTL%3Dhtl.5399338.20260810.20260815.DDF.18.CID..AUDID..localuniversal%26mpg%3DUSD%26mpf%3D698.42%26mpj%3D150.52%26mpr%3D54.79%26mctc%3D10%26rateplanid%3D230283102%26mpm%3D24%26mpn%3D200225354%26mpo%3DEC%26mpp%3D1&s=AD1XQnl5kFCjx5PMo6I2Kl0A0gBM&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "eDreams",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswhUyXEycZ9mATVn4WAur6ddbCm0GfHht-Q7-zOFZi3h8-lV2RiXgkRY_xcTA8cgch8cYzIe1WnhF4XUjheIqCwNM8ibH17tYa7oaBTAAW9Y_INpwD91Y64299zh57wO9vIjI27qhID7Nu5IsUifX3cav669boG2fMRGPGVcsYc4KDiqIYu&pcurl=https://accommodation.edreams.net/Hotel-Search?selected%3D5399338%26startDate%3D2026-08-10%26endDate%3D2026-08-15%26adults%3D2%26children%3D%26mpf%3D698.42%26cur%3DUSD%26mpj%3D150.52%26MDPCID%3DeDreams-US.DPS.Edreams.MetaSearch-GHA.HOTEL%26mpl%3DUSD%26numberOfRooms%3D1%26locale%3Den_US%26rffrid%3Dh4p.hcom.US.ghaodigeo.000.000.kwrd%3D%26pos%3DEDREAMS_US%26rateplanid%3D230283102%26mctc%3D10%26utm_medium%3Dmetasearch%26utm_campaign%3D421532%26utm_term%3Dhotel%26utm_source%3DFREEBOOKING&s=AD1XQnkq64Pyjmyyx2D8xRb3wa1o&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Hotelscombined.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszIFsfuGqwXRxqkOMfnHRermCKDVtyxwmfvTFLbcxS2v5C45iBVRJQ8Kh-EES9R8WYZcosv2FmZUtrpmjbSiuJiO8vgKQEA4RBcRnCpxZIlcohjeCbOYSDpMgWlVfcHf9zyKaBI8sBXKMeKgKcszWgJ1VqZEhdTVMoax0QlXdXZwiJI2lVQnkX9sCz1DnLQyDI_ZA&pcurl=https://www.hotelscombined.com/semi/ha/hotel_ads/687974/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D687974%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-08-10%26co%3D2026-08-15%26gs%3Dlocaluniversal%26l%3D5%26pc%3DUSD%26rid%3D%26pdtax%3D150.55%26pdtotal%3D698.50%26rpid%3D%26uc%3DUS%26ucuc%3DUSD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UFJJQ0VMSU5FQ09SRQ%26k_rt%3D%26k_sid%3D0YDEKH6wgx%26k_kct%3D1784736276%26k_gct%3D1784736335%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnmi3rHl2JzPuOiqZXuYAFgF&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$699",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Bluepillow.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw1kPWDoGw94ODiUmw-fOy9WhPbVTv6dTuEbTHdWfc3xAgk0gzre_dJTSYLJnbwdX7gSH8tOlllqYdUS5Qiy6SEwwO8ayjGLy_K5sWPsk6L5TAQydD5WPqjHAOaESE7FCVlWFEFotK2WFS0KLFcJjtVOVvlf-IDAHCzGnIUKOQrAR56ZDkLdTGdPg&pcurl=https://www.bluepillow.com/search/5943954d7c00cb0e643b24d5?begin%3D2026-08-10%26end%3D2026-08-15%26block_id%3D-b,ekG273kYA70ushQPbPWNe5KK4Wrkz0-hr2qis8vidFM3Ft4617zVpTKmzLdPFZIjAOMJd-DfJpP_LEatBVEfPg,-bkng-Hotel%26fees%3D120.39%26tax%3D150.53%26total%3D698.48%26adults%3D2%26childs%3D0%26infants%3D0%26childrens%3D0%26country%3DUS%26currency%3DUSD%26language%3Den%26source%3Dlocaluniversal%26utm_campaign%3Dhotel%26prid%3D&s=AD1XQnkK4uTrvGkqya4R-rJPamJp&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "momondo.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osxqyso9fpwXTh2UlypNAP_d5QmsJpRQ7wXtIu82D_8PAhIePN1i-zC-U10EH6iknJ80gyaK0dtLBQBi4lPKyfsSt-OeZShSozqIwwD2P9dniELJ6l1dYjJ49osXR0gZ98UgzkTJ6zYwfYceXgg6ihROyf0BVbMT_12cBoAVai8hJs2JyWvwRg&pcurl=https://www.momondo.com/semi/ha/hotel_ads/687974/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D687974%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-08-10%26co%3D2026-08-15%26gs%3Dlocaluniversal%26l%3D5%26pc%3DUSD%26rid%3D%26pdtax%3D150.55%26pdtotal%3D698.50%26rpid%3D%26uc%3DUS%26ucuc%3DUSD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UFJJQ0VMSU5FQ09SRQ%26k_rt%3D%26k_sid%3D0YBEMjcT9U%26k_kct%3D1784736276%26k_gct%3D1784736478%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnkur9ayxC-XRI3N2-df3XKp&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$699",
+          "free_cancellation": false
+        },
+        {
+          "provider": "dealbase.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxC05IJXYzgksmdy5rFAxWgtcDaDsfzGuKvCWspoK2ektKoxOJRLPtBLqZkwaeNhY6JAm2tOlaEh1LNZrRhFb4eNsWh-1-fSCG9B250g_ExYfYHjyuyAAWvfEFMkogmv4EoIjE-_E315lDBEy_7dWtbZZjQJbt3qFtlCT3ml2G1lBTapKWIpJnRUHUfYQuAprDASw&pcurl=https://deals.dealbase.com/?sig%3Dd24b78db5ff27b2a7633c125e8c1eb65fcdd29bfbe8d2468da3702f8e475011131373338383435313339%26turl%3Dhttps%253A%252F%252Fwww.dealbase.com%252FHotel%252FSearch%253FcheckIn%253D2026-08-10%2526checkOut%253D2026-08-15%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1835207%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D698.42%2526deviceType%253Ddesktop%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Dselected%252526gsite%25253Dlocaluniversal%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1835207%252526day%25253D10%252526month%25253D08%252526year%25253D2026%252526los%25253D5%252526price%25253D698.42%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DUS_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253Di49a4TFVIX7ZXSPdChIIhqwDEKMVGKlgIgNVU0RSATISGhWWK1ToGgtfUThacG1HZkxRZygCMM-5hdMG&s=AD1XQnk7fAfpWeT5s3bo93DtS-tm&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "CheapTickets.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxOwkNC3WnRIsV87duoOYwx9m5JN0aDC-lUr6WXShrbxp3wD-V4D5Oj_Bn48w7o2AY0T0IFRP7D96FN-GWpNvjJgIF6qBgfFBfp-EQsGGJc3fiIvDuPvPOCwFGu3RN_Mp8dDdZg8gJjwOFkGJCt4PV4OZZK4CTNuZ8zLslOmys0kEWh1ZELCVcSP-f8ZHTi3nDkiyk&pcurl=https://www.cheaptickets.com/Hotel-Search?selected%3D5399338%26startDate%3D2026-08-10%26endDate%3D2026-08-15%26MDPCID%3DCHEAPTICKETS-US.META.HPA.ORGANIC-desktop.HOTEL%26langid%3D1033%26adults%3D2%26children%3D%26MDPDTL%3Dhtl.5399338.20260810.20260815.DDF.18.CID..AUDID..localuniversal%26mpg%3DUSD%26mpf%3D698.42%26mpj%3D150.52%26mpr%3D54.79%26mctc%3D10%26rateplanid%3D230283102%26rateplanid%3D230283102%26mpm%3D24%26mpn%3D200225354%26mpo%3DEC%26mpp%3D1&s=AD1XQnkCpPtBA8P4YJOitISHOo1W&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Clicktrip.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw8RdmC_MuNfRPJDJx4w1SWjl3NhAuczXohTIwiOfqxJepS1ccspOYYbG9RVd_Q11p9FxDRh2PQP7JSG5bOq-iBc50SD8S6RUUQz9nScwvBH1NIHZ9may2yj5w8lSvxxndyggBnoqBxZ2cUGhr5xoi96PimzHQfsHzJU9OgxPGch5g0lhFGpEPXuydDM3xQk2RbLXdDEX8&pcurl=https://clicktrip.com/hotels/details/fWVAhOsugfExlTfyykIxkF7Jg_5jkpZurRZpcPmEzoQ2_04_Vs4zC1Mk_P8lfoNWW4V0L4r5lMN4UXB3s8qu1AoOaUvTBXITiQTkhOepBc16LzFTAxOrnbRCKVoaVz_F0?locale%3Den%26currency%3DUSD%26pos%3DUS%26date_type%3Dselected%26taf%3D0NnGJq0yaN8ky081WX6LeWIZxZjivRitS3BalBgoKrCiMAyqKtbB2Zp7gp_1P6VZ0%26verification%3Dfalse%26clk_src%3D%26utm_source%3Dgha%26rate_rule_id%3D&s=AD1XQnndzFpKaeEeUI0tZEHQW4rA&ap=1",
+          "official": false,
+          "price_per_night": "$138",
+          "total_price": "$692",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Reserving",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszMdE4uPoYZN0mw1fu1DnlX-z-IGcti8-eWrOirrCu5D7k9Y5tLAAUnC1PcXaOzqgCSjvfUdmdQcgksgJ1U0rzhZHmyO15TW1PAkF_uBLNfv_moRtoNwPCdGqjmXYxSaf68RxeV8walOBCEGrmKNGHA6x8R-Q-HBQjzQ0WQpldA6OyilkIanijZEtLBE0Yigg&pcurl=https://h-en.reserving.com/search?i%3D7103%26rf%3DGOOGLEHOTELS%26portal%3Drsvcom%26lang%3Den%26auto%3D1%26tipo%3DS%26id%3D171664%26numero_habs%3D1%26no_adultos_hab1%3D2%26no_ninos_hab1%3D0%26fecha_entrada%3D10%252F08%252F2026%26fecha_salida%3D15%252F08%252F2026%26refp%3D698.52%26campaing-id%3D%26tp%3D%26moneda%3DUSD%26device%3Ddesktop%26pais_dom%3DUS%26sg%3Db%3D554.73,b$%3DAED,bhab%3D377,big%3D2026-07-22T08:56:00%2B02:00,bmid%3D100,bpd%3Des,bpt%3D26.42,breg%3D12,bt%3D57.49,bwp%3DkRDJH1PfAqY,ts%3D2026-07-22T08:56:14%2B02:00/B:4777A9C93D358C114346EE68CFD8183194F922F2966D72B017F311C8%26c3%3Dmode%3DP,d%3D2,ts_id%3D7033743056493258%26r%3DCAMPAIGN-ID%3D;TRACKING-PARAM%3D;CUSTOM1%3D;PRICE-DISPLAYED-TOTAL%3D698.52;DEFAULT-DATE%3D0;CLICK-TYPE%3Dhotel;USER-COUNTRY%3DUS;DEVICE%3Ddesktop;SITE%3Dlocaluniversal;USER-LANGUAGE%3Den;USER-CURRENCY%3DUSD;POS%3DALL-ALL-ALL-RSVCOM;AD-CLICK%3D0;PAYMENT-ID%3Dfree;C2%3Db%3D554.73,b$%3DAED,bhab%3D377,big%3D2026-07-22T08:56:00%2B02:00,bmid%3D100,bpd%3Des,bpt%3D26.42,breg%3D12,bt%3D57.49,bwp%3DkRDJH1PfAqY,ts%3D2026-07-22T08:56:14%2B02:00/B:4777A9C93D358C114346EE68CFD8183194F922F2966D72B017F311C;C3%3Dmode%3DP,d%3D2,ts_id%3D7033743056493258&s=AD1XQnmq42qKwdQmn52KsnP9ARsU&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$699",
+          "free_cancellation": false
+        },
+        {
+          "provider": "HomeToGo",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswbZ547bjaUG2he4-hiU7VXhjDX4nzeNeNe8gc3n7zLeBuj69TULO1ND_mvKb00J5gWFlGG40BarWRvDynP78FgUvHOdovamoW8gvezMu7qD1ur6Lj5li7hPyDlA1lreRDjLt21sfG7ufASkP9ESYpII37MQroGB2yyjJJ7FPUGXAOHqQSGosA&pcurl=https://www.hometogo.com/search/5be4d50f075fd?arrival%3D2026-08-10%26duration%3D5%26id%3Dz3801b42ecb7341b0%2540f%2540s%26adults%3D2%26tpp%3Dmguslhfq.6a60ae18%26adword%3Dghf/us/z3801b42ecb7341b0/ct%3Dhs/n-a/n-a/5be4d50f075fd%26utm_source%3Dghf%26hl%3Den_US%26ghf_acc%3Dhtg_ghf%26c%3DUSD%26gValidation%3Dfalse%26gSite%3Dlocaluniversal&s=AD1XQnlpajVGgla-JcgPWxxtUnb1&ap=1",
+          "official": false,
+          "price_per_night": "$140",
+          "total_price": "$698",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Vio.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswopIMOhOMki6q3N71lf2OEviJ_PE6Y0NGzz5JSanc1brBPsDO2Gyj5h4sTz-zEWbnlwC2_Pmtnw3FYYAD7XQ3un5cvOQHd8tbL72t_OTDYw9q5MRV0e6BP34DYTsNtdBIsBz9k-5JEXAxZAfPHiJluvd3koLjHyxyE4CPmDdqi5DHG4oQ3NoO2&pcurl=https://deals.vio.com/?sig%3D73aca13c7f952d2641c156f3e69125e1eb497c325f122828ee5aa8797168b9a12d32303331333438363233%26turl%3Dhttps%253A%252F%252Fwww.vio.com%252FHotel%252FSearch%253FcheckIn%253D2026-08-10%2526checkOut%253D2026-08-15%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1835207%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D992.42%2526deviceType%253Ddesktop%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Dselected%252526gsite%25253Dlocaluniversal%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1835207%252526day%25253D10%252526month%25253D08%252526year%25253D2026%252526los%25253D5%252526price%25253D992.42%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DZZ_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253DJ3TTChT7T5fZXSPdChII8O0EEIo8GLBdIgNVU0RSATISGhW1P7m8Ggt1ZC1OWE1EYXNZTSgCMM2bhdMG&s=AD1XQnmEal0U2ZmI86KNyahgrzE7&ap=1",
+          "official": false,
+          "price_per_night": "$198",
+          "total_price": "$992",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Evendo",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxCI3veARPrHUVvzzU4LQjPxGEgZAFG10W94mUU1z5E685ht3bxsRBbXXsgLSwYK0DS-7Ds0lhC96loCkGCrKa5C_MnRBDJctbv4VPqa2d-pIU9yvdnY8_objBnQyyBC8_kn25ZTS_5iEO3L4udBJV-N_rWEulXhY-kNA1xs8CO4_52zjXc4TigoCFKvmtMnQ&pcurl=https://evendo.com/stays/jw-marriott-marquis-hotel-dubai/00101793?check_in%3D2026-08-10%26check_out%3D2026-08-15%26who%3D%255B%257B%2522adults%2522:2,%2522children%2522:%255B%255D%257D%255D%26currency%3DUSD%26language%3Den%26country%3DUS%26utm_source%3Dgoogle%26utm_medium%3Dgooglehotels%26utm_campaign%3Dlocaluniversal%26pdtax%3D172.94%26pdtotal%3D802.32%26prid%3D&s=AD1XQnk3Xtc1MLByRKfcRa-raTDw&ap=1",
+          "official": false,
+          "price_per_night": "$160",
+          "total_price": "$802",
+          "free_cancellation": false
+        },
+        {
+          "provider": "goseek.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsyBpLy52ZK3gxCgMvZwn_r1dWCF8kCYhThY0DojVfSSSg7sbFLgJ0mkzLUu1zwY8tE_V-IcQlyNWftfTpQR2FLel3KMWo-kSV0zYE8g4BR5r5iRBt-6JkjklEuMNEdux26Mknho2ekSCUxmSbVgJGLrzkJuFUVAyOBzpwCP5F7SPoe6m867gk2Clt-8eJLGHQ&pcurl=https://deals.goseek.com/?sig%3D34c47a49c3e8320dca5a5dda0da2a460c1bc23afde972e2894a4ff0b6052fb53383131303836353931%26turl%3Dhttps%253A%252F%252Fwww.goseek.com%252FHotel%252FSearch%253FcheckIn%253D2026-08-10%2526checkOut%253D2026-08-15%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1835207%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D992.42%2526deviceType%253Ddesktop%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Dselected%252526gsite%25253Dlocaluniversal%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1835207%252526day%25253D10%252526month%25253D08%252526year%25253D2026%252526los%25253D5%252526price%25253D992.42%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DZZ_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253D3S6lf5NP0OQCgt1ZC1OWE1EYXNZTRjRs4XTBiACOLX_5OULQhoIlIyD9Ybz8sHPARDw7QQYijwgsF0qA1VTRA&s=AD1XQnmowslQnfIqFsWtaifxs9nF&ap=1",
+          "official": false,
+          "price_per_night": "$198",
+          "total_price": "$992",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Etrip.net",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxY-kxKAlbyeOjEUWWaQW2DUMUY_-cwMxOmQGVUeB76jxuq0EP_tBW1WN9zJjajVRpCKHuYI_rRN_0fjkUDCw3Q8M1apRk_XOBgrQCb1GLG1Bjx0uroxs1uZV2RzTYNscNeaAT9HAodOkiogoFIAKCWO4ahsZzPFFOi9kUp6U9s5s36GEQ&pcurl=https://deals.etrip.net/?sig%3De9cc68956712e1e5d60f579a67e54afadd83f5d631dc9782cc50d47864de2f2c2d32303330363031313335%26turl%3Dhttps%253A%252F%252Fsearch.etrip.net%252FHotel%252FSearch%253FcheckIn%253D2026-08-10%2526checkOut%253D2026-08-15%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1835207%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D992.42%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Dselected%252526gsite%25253Dlocaluniversal%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1835207%252526day%25253D10%252526month%25253D08%252526year%25253D2026%252526los%25253D5%252526price%25253D992.42%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DZZ_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253DJ3TTChT7T5fZXSPdChII8O0EEIo8GLBdIgNVU0RSATISGhW1P7m8Ggt1ZC1OWE1EYXNZTSgCMM2bhdMG&s=AD1XQnkSn3EVsK2O03X4DKJNTYqt&ap=1",
+          "official": false,
+          "price_per_night": "$198",
+          "total_price": "$992",
+          "free_cancellation": false
+        }
+      ]
+    },
+    {
+      "name": "Sofitel Dubai The Palm",
+      "price_per_night": "$123",
+      "total_price": "$617",
+      "rating": 4.8,
+      "property_token": "ChgI_OLJzsWu1YNmGgwvZy8xamdsX3E1Zl8QAQ",
+      "booking_url": "http://sofitel.accor.com/hotels/6541?merchantid=seo-maps-AE-6541&sourceid=aw-cen&utm_source=google+Maps&utm_medium=seo+maps&utm_campaign=seo+maps&utm_term=Sofitel-Launch",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChgI_OLJzsWu1YNmGgwvZy8xamdsX3E1Zl8QAQ&q=Dubai",
+      "booking_providers": [
+        {
+          "provider": "Sofitel Dubai The Palm",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiK1-rvzueVAxW6mcIIHYNLAi0YACICCAEQIBoCamY&co=1&ase=2&gclid=EAIaIQobChMIitfq787nlQMVupnCCB2DSwItEAoYAiABEgKdxfD_BwE&cid=CAAS0gHkaOyE79hCKW0O_dTQ7eUS_x5cYPpUFygG6NU-ZJ71JhCyRZ7qRode2CKMJCt-Zz0Zqpv852YKuVhipzJZy_0rh9a73d7H2yvDsniB84ZFj2_F_SP09mJzi1InX9Gtil6jXvuiiFzSL7dpEqo11HWrwMJsioHCQQ8fnmojqTy1vr2QTDAY7grV1evMomFSF9wGbonE8Kb6Aqji24Jg6EC1bBSiyA_i6XOO56ndZgj9b_jiuthmOpeACY28A-uILKsNTrPPqK-YCCCGSfRZHfGQQ2w&category=acrcp_v1_48&sig=AOD64_089ZBN1M_vFxZsAUEaObPp0G5snA&adurl",
+          "official": true,
+          "price_per_night": "$143",
+          "total_price": "$716",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Stayforlong.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxyvG_WnC4p9Yq1rG8Sn_d8C-nfos2KSjpcl3lPccOTGGEhusm_o6cEFrg-D1gd-ppUSwrU8_BNrscOw5D4eAlxNHNPWPkigFXnz1VSUBdkagTX6qgrSQ_1p1koPF8rXlNyGkW1MVQjm7UNn9fwufwzgeGUEPmknAcghSntpvqVIqdTnvHTNzXjiUVaQg&pcurl=https://www.stayforlong.com/hotel-detail/165073?checkin%3D2026-08-10%26checkout%3D2026-08-15%26adults%3D2%26metadevice%3Ddesktop%26aid%3Dgha%26market%3Dus%26lang%3Den%26total%3D590%26query_type%3Dpull%26ch%3D0%26adclick%3Dfree%26defaultdate%3Dfalse%26googlesite%3Dlocaluniversal%26p%3Dd5f31db37e629924f98da415261725b8%26rate_token%3Dv2.2c8e408c786e20618d4f35d6b050b1e7%26source%3Dmeta&s=AD1XQnllX82zdHr5jbjF3hkm8nfk&ap=1",
+          "official": false,
+          "price_per_night": "$123",
+          "total_price": "$617",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Super.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsynpU6vT5zAWSfK26JbFhK3wao6ezD9oV9BIvz_-_UEaPCemnO0rPIaNCk8eRUHYkPkcPRrmbZk_a3d_irrX1MpwGuf86k81rBf5lHeV_nC3FAJ6gbgqNQ1ACWRJ2hWRee_jmDkJCMxnKl22ClOuXZrc1NVMi0O6NvC4Zx2V-LfNlq-RKPEe415KQ&pcurl=https://www.super.com/travel/transition/?data%3Dprice%3D508.53%2526total_price%3D520.57%2526retail_price%3D906.35%2526retail_total_price%3D927.8%2526surcharge%3D5.45%2526request_id%3D9795798398929141760%2526ps%3D1642246410%2526pb%3DA5Shep1Qayzao_TiSvSt1iZ9u7IHEFYGKHIFpTFy3P8Y212AI-AAcWsHIwSu3x9Po3fVFLdAR45QLvmSwMRSuipAX71De08DFju8O3e5dbjPpNoljTkiXGWbM6EX-XXT9or5ZOzhGQncmdttWjMWvN3DdfVHse9l1-SiL-SXUBtYuBj8CUtbCSAvy2VkXQubI0VpQrCKHIVKAuINuFueCy7IsUWekb_KPV1sQJrtrdTs_Crvae-a_LNGcxSoonhf0mblCrNMUeSWKxJeAHx36MGLLdl9K3UgIBGYE6LqAHinOqM5afWya43UKPaV7nMqyzAOqu-6y8dFNpCtpOm9TezZ49lAgWmPF8Ztzem-jz_1kndIBvOpz8WkJsRYBXXvRE3ztfULP7NRxkDzJQOX5X3SVZkv6mBO3QLoJ2nN33-ZwawLRgA-HezjICF29lCF83XN8TCXTWTk645eBucAepsWQ5jHH--2m1JRgwc7JyrdPNez90AIiFWPNsRdIYwKEyDfkW6j5PhhD-BQcgo52FBfYK02mPeGUyWmCD8ycmA%25253D%2526gha_pull_request%3DTrue%2526alwd_rand%3Dfalse%2526gt%3D1784761499%2526sg%3DzwTG8%2526sid%3DGHA_MD8%2526cmab_id%3D33%2526ib%3Dfalse%2526s2b%3Dm0%2526all_inclusive%3Dfalse%26utm_source%3Dgha%26utm_content%3Dlocaluniversal%26currency%3DUSD%26user_country%3DUS%26verification%3Dfalse%26rate_rule_ids%3D%26date_type%3Dselected%26rate_rule_id%3Dsignedout_desktop%26display_currency%3DUSD%26display_all_inclusive_price%3D526.02%26checkin_at%3D2026-08-10%26checkout_at%3D2026-08-15%26provider_hotel_id%3D10012268144%26provider%3Dean%26num_adults%3D2%26children%3D%5B%5D%26hotel_campaign%3D%26utm_campaign%3D%26user_locale%3Den-US%26user_list_id%3D%26utm_medium%3Dorganic%26utm_id%3Dgha_organic&s=AD1XQnnjX6O0eX8u94rI7rzKIxTI&ap=1",
+          "official": false,
+          "price_per_night": "$105",
+          "total_price": "$526",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Agoda",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsyaFU_a-xpBFzyrWbxCFvQtcGkxpuRsXRwk6gw5Ijkl2MVZBvq3Nv53D4a9HmdxOHn0OzehdTOBSbrWWiY2jio-iPBODvP6whGrF-uwlsd7vste2gxhZS8T_s9XhZd2ipvHPWnnqzIakbN_HcvKA5Dvs57yMqGSU4hbME6jy_pF84mJSEwzd8rum7pWVg&pcurl=https://www.agoda.com/partners/partnersearch.aspx?site_id%3D1917614%26CkInDay%3D10%26CkInMonth%3D08%26CkInYear%3D2026%26CkOutDay%3D15%26campaignid%3D%26CkOutMonth%3D08%26CkOutYear%3D2026%26SearchDateType%3Dselected%26NumberOfAdults%3D2%26LT%3D18%26NumberOfChildren%3D0%26childages%3D%26NumberOfRooms%3D1%26gsite%3Dlocaluniversal%26los%3D5%26PartnerCurrency%3DAED%26hid%3D462536%26RoomID%3D4418073%26masterRoomId%3D4418073%26PriceTotal%3D754.47%26PriceTax%3D160.80%26PriceFee%3D59.36%26RatePlan%3D109ca16d-5ace-3bbf-6d25-ecb25f633eed%26UserCountry%3DUS%26Currency%3DUSD%26UserDevice%3Ddesktop%26Verif%3Dfalse%26rr%3Drow_desktop%26audience_list%3D%26mcid%3D29004%26booking_source%3Dcpc%26adType%3D0%26mpt%3DRGcveDhSclJacE1uaWhmY3VTOUF5czBzaWw1L2pla042V29iUGRlK1d2OThyZlRBcUxaRnFLQ3BsR0FOVlJKdUl2TzY5aTBiQlR4bQ%26original_rr%3D%26gaClickSrc%3D%26clickType%3Dhotel%26lang%3Den%26pkgId%3DNoBreakfast_NoDinner_true&s=AD1XQnnYVrGNprbkDPceCjC71ccw&ap=1",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Booking.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiK1-rvzueVAxW6mcIIHYNLAi0YACICCAEQARoCamY&co=1&ase=2&gclid=EAIaIQobChMIitfq787nlQMVupnCCB2DSwItEAoYBCABEgLuQvD_BwE&cid=CAAS0gHkaOyE79hCKW0O_dTQ7eUS_x5cYPpUFygG6NU-ZJ71JhCyRZ7qRode2CKMJCt-Zz0Zqpv852YKuVhipzJZy_0rh9a73d7H2yvDsniB84ZFj2_F_SP09mJzi1InX9Gtil6jXvuiiFzSL7dpEqo11HWrwMJsioHCQQ8fnmojqTy1vr2QTDAY7grV1evMomFSF9wGbonE8Kb6Aqji24Jg6EC1bBSiyA_i6XOO56ndZgj9b_jiuthmOpeACY28A-uILKsNTrPPqK-YCCCGSfRZHfGQQ2w&category=acrcp_v1_48&sig=AOD64_15FhWCBiroP2qeYe9vz_syn21JPQ&adurl",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Expedia.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiK1-rvzueVAxW6mcIIHYNLAi0YACICCAEQdBoCamY&co=1&ase=2&gclid=EAIaIQobChMIitfq787nlQMVupnCCB2DSwItEAoYASABEgLiIfD_BwE&cid=CAAS0gHkaOyE79hCKW0O_dTQ7eUS_x5cYPpUFygG6NU-ZJ71JhCyRZ7qRode2CKMJCt-Zz0Zqpv852YKuVhipzJZy_0rh9a73d7H2yvDsniB84ZFj2_F_SP09mJzi1InX9Gtil6jXvuiiFzSL7dpEqo11HWrwMJsioHCQQ8fnmojqTy1vr2QTDAY7grV1evMomFSF9wGbonE8Kb6Aqji24Jg6EC1bBSiyA_i6XOO56ndZgj9b_jiuthmOpeACY28A-uILKsNTrPPqK-YCCCGSfRZHfGQQ2w&category=acrcp_v1_48&sig=AOD64_3qFUCBMroKnhWp43ns3vP9_ThcUA&adurl",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Bluepillow.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsyefcWzPxdl0rnT1xn56NMJ87gg_tMKQAc9v-DHfW0udTZTEghH8Pn-ZFaIYQQfebXIP8b8M7_82qO6i0lgukeHwV9SkOZDC1vRBn96jLxK3wR8Yt-_i2qbzafvSMiYOuD7bCpVeU356cRuUxwErzRoADX19x6rkq_cMOdLvk5LBD0TxV4ESUkiHA&pcurl=https://www.bluepillow.com/search/648084e91f174c21709f1d2b?begin%3D2026-08-10%26end%3D2026-08-15%26block_id%3D-b,2Nxa12ZXQZyn2i6A98B4B4X7siyWMWihqPsvgFwavSdLQ9U7PK0DIKG4jq9Zy20c,-bpctrip-Hotel%26fees%3D153.80%26tax%3D153.80%26total%3D716.10%26adults%3D2%26childs%3D0%26infants%3D0%26childrens%3D0%26country%3DUS%26currency%3DUSD%26language%3Den%26source%3Dlocaluniversal%26utm_campaign%3Dhotel%26prid%3D&s=AD1XQnnphJsmHfGf7knset0odFc2&ap=1",
+          "official": false,
+          "price_per_night": "$143",
+          "total_price": "$716",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Priceline",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiK1-rvzueVAxW6mcIIHYNLAi0YACICCAEQ4QEaAmpm&co=1&ase=2&gclid=EAIaIQobChMIitfq787nlQMVupnCCB2DSwItEAoYBSABEgJejPD_BwE&cid=CAAS0gHkaOyE79hCKW0O_dTQ7eUS_x5cYPpUFygG6NU-ZJ71JhCyRZ7qRode2CKMJCt-Zz0Zqpv852YKuVhipzJZy_0rh9a73d7H2yvDsniB84ZFj2_F_SP09mJzi1InX9Gtil6jXvuiiFzSL7dpEqo11HWrwMJsioHCQQ8fnmojqTy1vr2QTDAY7grV1evMomFSF9wGbonE8Kb6Aqji24Jg6EC1bBSiyA_i6XOO56ndZgj9b_jiuthmOpeACY28A-uILKsNTrPPqK-YCCCGSfRZHfGQQ2w&category=acrcp_v1_48&sig=AOD64_05FOBZ42op061Y0urjBd-jFx8Tvg&adurl",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$755",
+          "free_cancellation": false
+        },
+        {
+          "provider": "KAYAK.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiK1-rvzueVAxW6mcIIHYNLAi0YACICCAEQHhoCamY&co=1&ase=2&gclid=EAIaIQobChMIitfq787nlQMVupnCCB2DSwItEAoYBiABEgILavD_BwE&cid=CAAS0gHkaOyE79hCKW0O_dTQ7eUS_x5cYPpUFygG6NU-ZJ71JhCyRZ7qRode2CKMJCt-Zz0Zqpv852YKuVhipzJZy_0rh9a73d7H2yvDsniB84ZFj2_F_SP09mJzi1InX9Gtil6jXvuiiFzSL7dpEqo11HWrwMJsioHCQQ8fnmojqTy1vr2QTDAY7grV1evMomFSF9wGbonE8Kb6Aqji24Jg6EC1bBSiyA_i6XOO56ndZgj9b_jiuthmOpeACY28A-uILKsNTrPPqK-YCCCGSfRZHfGQQ2w&category=acrcp_v1_48&sig=AOD64_1dqh6lsOMdtNJFNe8rX9TQ5P6i1A&adurl",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Hotels.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiK1-rvzueVAxW6mcIIHYNLAi0YACICCAEQqwEaAmpm&co=1&ase=2&gclid=EAIaIQobChMIitfq787nlQMVupnCCB2DSwItEAoYAyABEgIznfD_BwE&cid=CAAS0gHkaOyE79hCKW0O_dTQ7eUS_x5cYPpUFygG6NU-ZJ71JhCyRZ7qRode2CKMJCt-Zz0Zqpv852YKuVhipzJZy_0rh9a73d7H2yvDsniB84ZFj2_F_SP09mJzi1InX9Gtil6jXvuiiFzSL7dpEqo11HWrwMJsioHCQQ8fnmojqTy1vr2QTDAY7grV1evMomFSF9wGbonE8Kb6Aqji24Jg6EC1bBSiyA_i6XOO56ndZgj9b_jiuthmOpeACY28A-uILKsNTrPPqK-YCCCGSfRZHfGQQ2w&category=acrcp_v1_48&sig=AOD64_1VgopNkXpTX1ZPqDoELXoY7Cqu7Q&adurl",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Travelocity.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswZZZPdkdNdfGUylLSEMN1sw_8jpBRuJCrFB470aBix1V8yvmE5g-CM9oewo9awCRHGX1ZbyKf8MS2wUn_A2-trLkm22b1YOa_KK8swfw7IF1dzY_ulGCtYyCb1dpcs6-H5g8FuO6QoUzHQ2_ag4e1xqrWvdByjEZkWQZkwTugXVyWsUzAlDn70GC2GgPHe&pcurl=https://www.travelocity.com/Hotel-Search?selected%3D5914122%26startDate%3D2026-08-10%26endDate%3D2026-08-15%26adults%3D2%26children%3D%26MDPCID%3Dtravelocity-US.META.HPA.ORGANIC.HOTEL%26MDPDTL%3DHTL.5914122.20260810.20260815.DDF.18.CID..AUDID..localuniversal%26mpg%3DUSD%26mpf%3D754.39%26mpj%3D160.79%26mpr%3D59.36%26mctc%3D10%26rateplanid%3D204772315%26mpm%3D24%26mpn%3D200978168%26mpo%3DEC%26mpp%3D1&s=AD1XQnkAdP_gd36c8J-VZ5Grhoip&ap=1",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "eDreams",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswtUJDU45jgohfQsffpny-ITc2yQZuBy9kOQEj8Aqh1A7HRTuQgUOVWzkZ7LACzdSfb01fzMQXbd-_NXGWi90-kqM4P9HjAOtpkX_9daufBIPLE93nkt2DDepxzaDBtu4pAm5u9POK4OQ62hvkOptWI72aD71ZzDAMSTh7zrqD9vSrXRzgj&pcurl=https://accommodation.edreams.net/Hotel-Search?selected%3D5914122%26startDate%3D2026-08-10%26endDate%3D2026-08-15%26adults%3D2%26children%3D%26mpf%3D754.39%26cur%3DUSD%26mpj%3D160.79%26MDPCID%3DeDreams-US.DPS.Edreams.MetaSearch-GHA.HOTEL%26mpl%3DUSD%26numberOfRooms%3D1%26locale%3Den_US%26rffrid%3Dh4p.hcom.US.ghaodigeo.000.000.kwrd%3D%26pos%3DEDREAMS_US%26rateplanid%3D204772315%26mctc%3D10%26utm_medium%3Dmetasearch%26utm_campaign%3D429235%26utm_term%3Dhotel%26utm_source%3DFREEBOOKING&s=AD1XQnm25-rknJDQEHJK8XEr6WU9&ap=1",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Orbitz.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw_LbUxmO-ntYyFVNHeqD94yckcK4cDTe8V5XgImL0JpuMd-UJVoXG2ouPBjYrb-zLvpK8z5hzd8FkqxKIlttl0cU1UmGgNAiNuoP8Wxp6k5QtncVQ-Z8LsgYQhK5bupF1mTPm788rkFPSbjscopOjzdzaX0Ywm-pjRzJrBx8p1L2ryuaoHKmF5AiEPXuE&pcurl=https://www.orbitz.com/Hotel-Search?selected%3D5914122%26startDate%3D2026-08-10%26endDate%3D2026-08-15%26adults%3D2%26children%3D%26MDPCID%3DORBITZ-US.META.HPA.ORGANIC-desktop.HOTEL%26MDPDTL%3Dhtl.5914122.20260810.20260815.DDF.18.CID..AUDID..localuniversal%26mpg%3DUSD%26mpf%3D754.39%26mpj%3D160.79%26mpr%3D59.36%26mctc%3D10%26rateplanid%3D204772315%26mpm%3D24%26mpn%3D200978168%26mpo%3DEC%26mpp%3D1&s=AD1XQnkC6gal9DRRdwO8l9pWcT9I&ap=1",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Evendo",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszfHNibcVzpxBBbimr0sHyCNq9by1Z1NV_iSTBP4aUdFUSMU-DiB9-zXpes94fW6eOtYMZmmeydK8DFaSiqZqgoIzHFfTmh3Xfb337b9D-6Hd-zV7yIYGWqzYm60TELzNySXd8HhADzC1REfPNGYRes73ztRvl273RUJs8XWHFn2aOcK9yxOnOdDg4IjX9Q5g&pcurl=https://evendo.com/stays/sofitel-dubai-the-palm/58130800?check_in%3D2026-08-10%26check_out%3D2026-08-15%26who%3D%255B%257B%2522adults%2522:2,%2522children%2522:%255B%255D%257D%255D%26currency%3DUSD%26language%3Den%26country%3DUS%26utm_source%3Dgoogle%26utm_medium%3Dgooglehotels%26utm_campaign%3Dlocaluniversal%26pdtax%3D171.93%26pdtotal%3D815.02%26prid%3D&s=AD1XQnnmWtmfILe2NgmKPwbjyjZY&ap=1",
+          "official": false,
+          "price_per_night": "$163",
+          "total_price": "$815",
+          "free_cancellation": false
+        },
+        {
+          "provider": "momondo.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw6mmuPYZdvISFBGYdpz5lG9kUlgJSYoUq3zzFJf5mVxhefowIBaIkwXCrFS60ahpgFlX26pLeQBTx82wbcfMbQ-T5lk2C_-7Z_U1EtbUXblMon0SnPY6nncbW-NJ4WGzcNk3utpmQ9-KoEb8rdNjzUPn0rgzIiwe6xj1jPRMvRkqmAOwyayA&pcurl=https://www.momondo.com/semi/ha/hotel_ads/545907/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D545907%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-08-10%26co%3D2026-08-15%26gs%3Dlocaluniversal%26l%3D5%26pc%3DUSD%26rid%3D%26pdtax%3D160.80%26pdtotal%3D754.45%26rpid%3D%26uc%3DUS%26ucuc%3DUSD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UFJJQ0VMSU5FQ09SRQ%26k_rt%3D%26k_sid%3DtgGkGerbKI%26k_kct%3D1784751446%26k_gct%3D1784751520%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnnK3HyH2feEJD97_UuPaH9s&ap=1",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Hotelscombined.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osxuw5lRG-MKBs3nMIbg3R_Xo5fN97eZaF6t3EXd9pEheMWBd1yr-qq-EerkArs0eM_IrMhRX9iQjTrL-ODuQucHvP2Tqw2YQ9OE7xIgW2z3DeAdtcofrCxChjRq68DSsGJ10jJCIUyNbWEp0ugn0VrwTrTDwkmNz8NmDO-hVKstrAw8ipyCnem012Eb3xXQchfkAg&pcurl=https://www.hotelscombined.com/semi/ha/hotel_ads/545907/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D545907%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-08-10%26co%3D2026-08-15%26gs%3Dlocaluniversal%26l%3D5%26pc%3DUSD%26rid%3D%26pdtax%3D160.80%26pdtotal%3D754.45%26rpid%3D%26uc%3DUS%26ucuc%3DUSD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UFJJQ0VMSU5FQ09SRQ%26k_rt%3D%26k_sid%3DtgHEKJceNI%26k_kct%3D1784751446%26k_gct%3D1784751496%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnmZqf4v4qh0xGkQwK9M0JHN&ap=1",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "CheapTickets.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswNNrzEU2sd2rf4b8BegcfwED8bTUliieSZTm6Vin4kB0wUnNQBHetRvcZ5-QiYHPRaW4x3UljcsvsN5B6RR1bN_0MblQqZ20wIcXXE6eHzW_mPPS_2EJOK6hWvsXslv1sRUv65xIzdNsPORmOmg6ZuW0dTdOZDNkpZrNL_FghI6q-gdpE77lHG0ppxcVY7v4fSiDk&pcurl=https://www.cheaptickets.com/Hotel-Search?selected%3D5914122%26startDate%3D2026-08-10%26endDate%3D2026-08-15%26MDPCID%3DCHEAPTICKETS-US.META.HPA.ORGANIC-desktop.HOTEL%26langid%3D1033%26adults%3D2%26children%3D%26MDPDTL%3Dhtl.5914122.20260810.20260815.DDF.18.CID..AUDID..localuniversal%26mpg%3DUSD%26mpf%3D754.39%26mpj%3D160.79%26mpr%3D59.36%26mctc%3D10%26rateplanid%3D204772315%26rateplanid%3D204772315%26mpm%3D24%26mpn%3D200978168%26mpo%3DEC%26mpp%3D1&s=AD1XQnmLjP3uDU8UETeUsm4T_LE3&ap=1",
+          "official": false,
+          "price_per_night": "$151",
+          "total_price": "$754",
+          "free_cancellation": false
+        },
+        {
+          "provider": "Clicktrip.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osyw110D-EJPXtclHW9U8r5m3LYWQBqDnCpPxZGPLfD0b8Oksr0cWhSKqSwhyQaglOJ4YzBmU6Ru8Rk8bIyZgds1Hpw0IwlIkghvQoDNN-vDtNxV7l1UIZuAMV1bJaYRKcI85Xq17iMkHy7HyF5puxoA08Rd-sJJcSQ8RRlus14D_Jra70PvK4PMzn0PVfIOyEPrRRo8bfk&pcurl=https://clicktrip.com/hotels/details/Ugedl5l9tL9nGO0GXWm7Y7_seYBUnsuMABHcujfdTnxt8ZGO4inJecxus4-PLPUzUgInwOwET5R5KdYv1SuFxlR5--plYALRGV2sx_a21AMd8fItzRSC13IobfxgLtSP0?locale%3Den%26currency%3DUSD%26pos%3DUS%26date_type%3Dselected%26taf%3D0NnGJq0yaN8ky081WX6LeSKShYWChDr9D5Oz_tcmClNYnSB4O_lO2BA9AhBVI4iB0%26verification%3Dfalse%26clk_src%3D%26utm_source%3Dgha%26rate_rule_id%3D&s=AD1XQnkKx06mwpnaSlN08CmsD-EY&ap=1",
+          "official": false,
+          "price_per_night": "$203",
+          "total_price": "$1,014",
+          "free_cancellation": false
+        }
+      ]
+    },
+    {
+      "name": "Waldorf Astoria Dubai Palm Jumeirah",
+      "price_per_night": "$176",
+      "total_price": "$879",
+      "rating": 4.8,
+      "property_token": "ChkI1qL09PvD8vzMARoML2cvMXB0dzR5cWtzEAE",
+      "booking_url": "https://www.hilton.com/en/hotels/dxbpdwa-waldorf-astoria-dubai-palm-jumeirah/?SEO_id=GMB-EMEA-WA-DXBPDWA",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI1qL09PvD8vzMARoML2cvMXB0dzR5cWtzEAE&q=Dubai"
+    },
+    {
+      "name": "Rove Expo City",
+      "price_per_night": "$37",
+      "total_price": "$186",
+      "rating": 4.9,
+      "property_token": "ChoIwvjxsJHBuKb4ARoNL2cvMTFxbjVnbWhicxAB",
+      "booking_url": "https://www.rovehotels.com/en/hotels/rove-expo-2020/?utm_source=google&utm_medium=local-search&utm_campaign=googlemybusiness",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIwvjxsJHBuKb4ARoNL2cvMTFxbjVnbWhicxAB&q=Dubai"
+    },
+    {
+      "name": "Hyatt Regency Dubai",
+      "price_per_night": "$49",
+      "total_price": "$245",
+      "rating": 4.4,
+      "property_token": "ChcIr93smaW_ipKIARoKL20vMGpfMXF6bhAB",
+      "booking_url": "https://www.hyatt.com/hyatt-regency/en-US/dxbrd-hyatt-regency-dubai?src=corp_lclb_google_seo_dxbrd&utm_source=google&utm_medium=organic&utm_campaign=lmr",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChcIr93smaW_ipKIARoKL20vMGpfMXF6bhAB&q=Dubai"
+    },
+    {
+      "name": "Radisson Beach Resort Palm Jumeirah",
+      "price_per_night": "$75",
+      "total_price": "$376",
+      "rating": 4.5,
+      "property_token": "ChkI6JfThr6IgfZNGg0vZy8xMXQyZnRtZzFuEAE",
+      "booking_url": "https://www.radissonhotels.com/en-us/hotels/radisson-resort-palm-jumeirah-beach-dubai?cid=a:se+b:gmb+c:emea+i:local+e:rad+d:mea+h:AEDXBPLM",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI6JfThr6IgfZNGg0vZy8xMXQyZnRtZzFuEAE&q=Dubai"
+    },
+    {
+      "name": "Anantara The Palm Dubai Resort",
+      "price_per_night": "$156",
+      "total_price": "$779",
+      "rating": 4.7,
+      "property_token": "ChkI9pvwn4aP0s2EARoML2cvMWhjMXlrNmRyEAE",
+      "booking_url": "https://www.anantara.com/palm-dubai?utm_source=GoogleMyBusiness&utm_medium=GMB&utm_term=DubaiThePalm&utm_content=Home&utm_campaign=Google_GMB",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI9pvwn4aP0s2EARoML2cvMWhjMXlrNmRyEAE&q=Dubai"
+    },
+    {
+      "name": "Four Seasons Resort Dubai at Jumeirah Beach",
+      "price_per_night": "$410",
+      "total_price": "$2,052",
+      "rating": 4.7,
+      "property_token": "ChkIicPzivm3nq2qARoML2cvMTJobHp5dzl2EAE",
+      "booking_url": "https://www.fourseasons.com/dubaijb/?utm_source=google&utm_medium=organicsearch&utm_campaign=tor-bal-hre-mid-seo-na&utm_content=na-na&utm_term=na",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkIicPzivm3nq2qARoML2cvMTJobHp5dzl2EAE&q=Dubai"
+    },
+    {
+      "name": "Palazzo Versace Dubai",
+      "price_per_night": "$147",
+      "total_price": "$736",
+      "rating": 4.6,
+      "property_token": "ChYIla3QqMH02YcHGgovbS8wNXBjbHcwEAE",
+      "booking_url": "http://www.palazzoversace.ae/",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChYIla3QqMH02YcHGgovbS8wNXBjbHcwEAE&q=Dubai"
+    },
+    {
+      "name": "voco Dubai The Palm",
+      "price_per_night": "$71",
+      "total_price": "$356",
+      "rating": 4.9,
+      "property_token": "ChoIrOWEvq2A5dWdARoNL2cvMTFzXzVkamdsdhAB",
+      "booking_url": "https://www.vocohotels.com/dubaithepalm",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIrOWEvq2A5dWdARoNL2cvMTFzXzVkamdsdhAB&q=Dubai"
+    },
+    {
+      "name": "Dukes The Palm Dubai Hotel",
+      "price_per_night": "$68",
+      "total_price": "$339",
+      "rating": 4.7,
+      "property_token": "ChkI2Ovymqnh4KdnGg0vZy8xMWM1eHM3NTN3EAE",
+      "booking_url": "https://www.minorhotels.com/en/destinations/united-arab-emirates/dubai/dukes-the-palm-dubai-hotel-colbert-collection?utm_source=GoogleMyBusiness&utm_medium=GMB&utm_term=DukesDubai&utm_content=Home&utm_campaign=Google_GMB",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI2Ovymqnh4KdnGg0vZy8xMWM1eHM3NTN3EAE&q=Dubai"
+    },
+    {
+      "name": "Address Beach Resort",
+      "price_per_night": "$270",
+      "total_price": "$1,350",
+      "rating": 4.7,
+      "property_token": "ChkI4NS23uue18toGg0vZy8xMWM1Ymp6XzVuEAE",
+      "booking_url": "https://www.addresshotels.com/en/resorts/address-beach-resort/",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI4NS23uue18toGg0vZy8xMWM1Ymp6XzVuEAE&q=Dubai"
+    },
+    {
+      "name": "Hilton Dubai Palm Jumeirah",
+      "price_per_night": "$133",
+      "total_price": "$665",
+      "rating": 4.9,
+      "property_token": "ChoIwpqwgqeApJzMARoNL2cvMTFnX3psMXd6cxAB",
+      "booking_url": "https://www.hilton.com/en/hotels/dxbpjhi-hilton-dubai-palm-jumeirah/?SEO_id=GMB-EMEA-HI-DXBPJHI",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIwpqwgqeApJzMARoNL2cvMTFnX3psMXd6cxAB&q=Dubai"
+    },
+    {
+      "name": "Aparthotel Adagio Premium The Palm",
+      "price_per_night": "$74",
+      "total_price": "$372",
+      "rating": 4.8,
+      "property_token": "ChoIopfXj5CFwPPDARoNL2cvMTFtcGN2cjhyYhAB",
+      "booking_url": "https://www.adagio-city.com/a609?utm_source=googleMaps&utm_medium=seoMaps&utm_campaign=seoMaps&y_source=1_MTUzNTkyODctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChoIopfXj5CFwPPDARoNL2cvMTFtcGN2cjhyYhAB&q=Dubai"
+    },
+    {
+      "name": "Taj Dubai",
+      "price_per_night": "$110",
+      "total_price": "$550",
+      "rating": 4.6,
+      "property_token": "ChkIwr-V246X8o4-Gg0vZy8xMWJjOGN3NXFuEAE",
+      "booking_url": "https://www.tajhotels.com/en-in/hotels/taj-dubai?utm_source=google&utm_medium=local&utm_campaign=taj-dubai",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkIwr-V246X8o4-Gg0vZy8xMWJjOGN3NXFuEAE&q=Dubai"
+    },
+    {
+      "name": "Taj Jumeirah Lakes Towers",
+      "price_per_night": "$71",
+      "total_price": "$357",
+      "rating": 4.5,
+      "property_token": "ChkIxuvgvIzpwu1tGg0vZy8xMWYwM3I2anlmEAE",
+      "booking_url": "https://www.tajhotels.com/en-in/hotels/taj-jumeirah-lakes-towers?utm-medium=local&utm_source=google&utm_campaign=taj-jumeirah-lakes-towers",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkIxuvgvIzpwu1tGg0vZy8xMWYwM3I2anlmEAE&q=Dubai"
+    },
+    {
+      "name": "Hyatt Centric Jumeirah Dubai",
+      "price_per_night": "$81",
+      "total_price": "$407",
+      "rating": 4.5,
+      "property_token": "ChkI3qHvyd367P5hGg0vZy8xMWxxZHJxaHBsEAE",
+      "booking_url": "https://www.hyatt.com/hyatt-centric/en-US/dxbcl-hyatt-centric-jumeirah-dubai?src=corp_lclb_google_seo_dxbcl&utm_source=google&utm_medium=organic&utm_campaign=lmr",
+      "details_url": "https://serpapi.com/search.json?adults=2&check_in_date=2026-08-10&check_out_date=2026-08-15&children=0&currency=USD&engine=google_hotels&gl=us&hl=en&property_token=ChkI3qHvyd367P5hGg0vZy8xMWxxZHJxaHBsEAE&q=Dubai"
+    }
+  ]
+}
