@@ -1,6 +1,6 @@
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
-
+from api.currency_api import convert_amount
 
 class PlannerSkill:
     """
@@ -27,11 +27,22 @@ class PlannerSkill:
             return missing
 
         budget = intent_data["budget"]
+        user_currency = (intent_data.get("currency") or "USD").upper()
+
+        if user_currency != "USD":
+            try:
+                budget_usd = convert_amount(budget, user_currency, "USD")
+            except Exception:
+                return {
+                    "planned_trip": [],
+                    "note": f"Could not process budget in '{user_currency}'. Please check the currency code.",
+                }
+        else:
+            budget_usd = budget
 
         flight_result = self.flight_skill.execute(intent_data)
         hotel_result = self.hotel_skill.execute(intent_data)
 
-        # If either sub-skill itself returned missing-field info, propagate that
         if "flights" not in flight_result or "hotels" not in hotel_result:
             combined_missing = {}
             combined_missing.update({k: v for k, v in flight_result.items() if v is None})
@@ -48,21 +59,35 @@ class PlannerSkill:
                 "note": "Could not find enough flight or hotel options to build a plan within budget.",
             }
 
-        combos = self._find_combos_within_budget(flights, hotels, budget)
+        combos = self._find_combos_within_budget(flights, hotels, budget_usd)
 
         if not combos:
-            cheapest_total = self._cheapest_possible_total(flights, hotels)
+            cheapest_total_usd = self._cheapest_possible_total(flights, hotels)
+            cheapest_display = cheapest_total_usd
+            if user_currency != "USD" and cheapest_total_usd is not None:
+                try:
+                    cheapest_display = convert_amount(cheapest_total_usd, "USD", user_currency)
+                except Exception:
+                    pass
             return {
                 "planned_trip": [],
                 "note": (
-                    f"No flight + hotel combination fits within a budget of {budget}. "
-                    f"The cheapest available combination costs approximately {cheapest_total}."
+                    f"No flight + hotel combination fits within a budget of {budget} {user_currency}. "
+                    f"The cheapest available combination costs approximately {cheapest_display} {user_currency}."
                 ),
             }
 
-        # Sort combos by total price, return the best few options
         combos.sort(key=lambda c: c["total_price"])
-        return {"planned_trip": combos[:5]}
+
+        if user_currency != "USD":
+            for c in combos:
+                try:
+                    c["total_price"] = convert_amount(c["total_price"], "USD", user_currency)
+                    c["remaining_budget"] = round(budget - c["total_price"], 2)
+                except Exception:
+                    pass
+
+        return {"planned_trip": combos[:5], "currency": user_currency}
 
     def _find_combos_within_budget(self, flights: list, hotels: list, budget: float) -> list:
         combos = []
@@ -103,11 +128,9 @@ class PlannerSkill:
                 return None
         return None
 
-    def _cheapest_possible_total(self, flights: list, hotels: list) -> float:
-        valid_flight_prices = [self._to_number(f.get("price")) for f in flights]
-        valid_flight_prices = [p for p in valid_flight_prices if p is not None]
-        valid_hotel_prices = [self._to_number(h.get("total_price")) for h in hotels]
-        valid_hotel_prices = [p for p in valid_hotel_prices if p is not None]
+    def _cheapest_possible_total(self, flights: list, hotels: list) -> float | None:
+        valid_flight_prices = [p for p in (self._to_number(f.get("price")) for f in flights) if p is not None]
+        valid_hotel_prices = [p for p in (self._to_number(h.get("total_price")) for h in hotels) if p is not None]
         if not valid_flight_prices or not valid_hotel_prices:
             return None
         return round(min(valid_flight_prices) + min(valid_hotel_prices), 2)
