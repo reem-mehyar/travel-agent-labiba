@@ -3,7 +3,7 @@ from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
 from skills.weather_skill import WeatherSkill
 from skills.currency_skill import CurrencySkill
-
+from skills.planner_skill import PlannerSkill
 
 class ServiceProvider:
 
@@ -27,3 +27,6 @@ class ServiceProvider:
     def currency_skill():
         return CurrencySkill()
     
+    @staticmethod
+    def planner_skill():
+        return PlannerSkill()

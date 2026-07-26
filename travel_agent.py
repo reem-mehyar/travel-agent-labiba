@@ -5,6 +5,7 @@ from datetime import date
 from providers.service_provider import ServiceProvider
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
+from skills.planner_skill import PlannerSkill
 from skills.currency_skill import CurrencySkill
 from skills.weather_skill import WeatherSkill
 from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT
@@ -33,6 +34,7 @@ class TravelAgent:
             "hotel": HotelSkill(),
             "flight": FlightSkill(),
             "weather": WeatherSkill(),
+            "planner": PlannerSkill()
         }
         self.currency_skill = ServiceProvider.currency_skill()
         self.conversation_history = []
@@ -43,6 +45,7 @@ class TravelAgent:
             "hotel": "hotels",
             "flight": "flights",
             "weather": "weather",
+            "planner": "planned_trip",
         }
 
     def handle_request(self, user_message: str) -> str:

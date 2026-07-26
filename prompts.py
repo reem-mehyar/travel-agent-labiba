@@ -117,12 +117,17 @@ returning it in departure_city/destination_city/location.
 If it's ambiguous which field the user means to correct, prefer leaving
 it as a new distinct value rather than guessing incorrectly.
 
+Use "planner" when the user mentions a total budget for their trip AND wants
+both flights and a hotel selected within it (e.g. "plan a trip to Athens for
+$1000", "I have a budget of 800 JOD for flights and hotel").
+
 Supported skill values (use these exact strings, do not pluralize or modify them):
 - "hotel"
 - "flight"
 - "weather"
 - "unclear"
 - "none"
+- "planner"
 
 # Output shape
 
@@ -142,7 +147,8 @@ per skill. Fields not relevant to the requested skill(s) should be null.
     "passengers": 1,
     "start_date": null,
     "end_date": null,
-    "currency": null
+    "currency": null,
+    "budget": null,
 }
 
 Field notes:
