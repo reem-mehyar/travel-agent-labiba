@@ -36,12 +36,7 @@ def serpapi_request(params: dict) -> dict:
 # ----------------------------------------------------
 # Flights
 # ----------------------------------------------------
-def search_flights(
-    origin: str,
-    destination: str,
-    outbound_date: str,
-    return_date: str = None,
-) -> dict:
+def search_flights(origin: str, destination: str, outbound_date: str, return_date: str = None,) -> dict:
 
     params = {
         "engine": "google_flights",
@@ -58,7 +53,6 @@ def search_flights(
         params["type"] = 2
 
     data = serpapi_request(params)
-
     return {
         "flights": data.get("best_flights", []),
         "google_flights_url": data.get("search_metadata", {}).get("google_flights_url"),

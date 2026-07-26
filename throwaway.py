@@ -21,7 +21,7 @@ import json
 for place in attractions:
     print(place.get("title"), "-", place.get("address"), "-", place.get("rating"))"""
 
-from api.currency_api import get_exchange_rate, convert_amount
+from api.serpapi_api import search_flights
 
-print(get_exchange_rate("USD", "JOD"))
-print(convert_amount(284, "USD", "JOD"))
+results = search_flights("AMM", "ATH", "2026-08-01")
+print("Got", len(results), "results")

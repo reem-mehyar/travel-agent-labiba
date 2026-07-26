@@ -67,26 +67,47 @@ class PlannerSkill:
     def _find_combos_within_budget(self, flights: list, hotels: list, budget: float) -> list:
         combos = []
         for flight in flights:
-            flight_price = flight.get("price")
+            flight_price = self._to_number(flight.get("price"))
             if flight_price is None:
                 continue
             for hotel in hotels:
-                hotel_price = hotel.get("total_price")
+                hotel_price = self._to_number(hotel.get("total_price"))
                 if hotel_price is None:
                     continue
                 total = flight_price + hotel_price
                 if total <= budget:
                     combos.append({
                         "flight": flight,
-                        "hotel": hotel,
+                        "hotel": {
+                            "name": hotel.get("name"),
+                            "total_price": hotel_price,
+                            "rating": hotel.get("rating"),
+                            "booking_url": hotel.get("booking_url"),
+                        },
                         "total_price": round(total, 2),
                         "remaining_budget": round(budget - total, 2),
                     })
         return combos
 
+    def _to_number(self, value) -> float | None:
+        """Coerces a price value to a float, handling strings with currency symbols/commas."""
+        if value is None:
+            return None
+        if isinstance(value, (int, float)):
+            return float(value)
+        if isinstance(value, str):
+            cleaned = value.replace("$", "").replace(",", "").strip()
+            try:
+                return float(cleaned)
+            except ValueError:
+                return None
+        return None
+
     def _cheapest_possible_total(self, flights: list, hotels: list) -> float:
-        valid_flight_prices = [f["price"] for f in flights if f.get("price") is not None]
-        valid_hotel_prices = [h["total_price"] for h in hotels if h.get("total_price") is not None]
+        valid_flight_prices = [self._to_number(f.get("price")) for f in flights]
+        valid_flight_prices = [p for p in valid_flight_prices if p is not None]
+        valid_hotel_prices = [self._to_number(h.get("total_price")) for h in hotels]
+        valid_hotel_prices = [p for p in valid_hotel_prices if p is not None]
         if not valid_flight_prices or not valid_hotel_prices:
             return None
         return round(min(valid_flight_prices) + min(valid_hotel_prices), 2)

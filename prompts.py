@@ -120,6 +120,20 @@ it as a new distinct value rather than guessing incorrectly.
 Use "planner" when the user mentions a total budget for their trip AND wants
 both flights and a hotel selected within it (e.g. "plan a trip to Athens for
 $1000", "I have a budget of 800 JOD for flights and hotel").
+IMPORTANT: If the user mentions a "budget" or "total budget" for the trip
+AND is asking for both a flight and a hotel, you MUST use "skills": ["planner"]
+— NOT ["flight", "hotel"]. The presence of a budget number is the deciding
+signal. Never return ["flight", "hotel"] together with a non-null "budget" field.
+When a single date range applies to a planner request (which needs both
+flight dates AND hotel dates), populate ALL FOUR date fields from that one
+range:
+- departure_date = start of the range
+- return_date = end of the range
+- check_in = start of the range
+- check_out = end of the range
+Do this even though the user only mentioned the date range once. Do not
+leave check_in/check_out null just because departure_date/return_date
+were already filled from the same phrase.
 
 Supported skill values (use these exact strings, do not pluralize or modify them):
 - "hotel"
@@ -158,8 +172,12 @@ Field notes:
   currency (e.g. "in JOD", "in euros", "show prices in dollars"), extract
   the 3-letter ISO currency code here regardless of which skills are requested.
   If not mentioned, return null.
-- "location" is used for hotel requests AND weather requests — it represents
-  the city being asked about, regardless of which skill(s) are requested.
+- "location" is used for hotel requests, weather requests, AND planner requests
+  — it represents the city being asked about, regardless of which skill(s) are requested.
+- For "planner" requests specifically: if the user only mentions one destination
+  city (not separate wording for flight vs. hotel), populate BOTH
+  "destination_city" (for the flight) AND "location" (for the hotel) with that
+  same city.
 - "start_date" / "end_date" are used for weather requests.
   
 --------------------------------------------------
