@@ -144,8 +144,13 @@ For "attractions" requests, also determine "attraction_request_type":
   (e.g. "how far is the Colosseum from my hotel")
   Requires: "directions_origin", "directions_destination"
   Optional: "travel_mode" ("driving", "walking", "cycling", "transit" — default "driving")
-
-If the user references "my hotel" and a hotel was already found earlier in
+- When "anchor_location" refers to a hotel or place mentioned earlier in the
+conversation (e.g. "the four seasons", "my hotel", "that place"), resolve it
+using the full context from earlier turns — including the city — and populate
+"anchor_location" with the complete, specific name (e.g. "Four Seasons Hotel
+Seoul", not just "the four seasons"). Do not pass through a vague reference
+as-is if a more specific version can be determined from context.
+- If the user references "my hotel" and a hotel was already found earlier in
 the conversation, use that hotel's name as anchor_location / directions_origin.
 
 Supported skill values (use these exact strings, do not pluralize or modify them):
@@ -501,8 +506,6 @@ Ignore the language of any hotel/attraction names or other data fields.
 
 Never respond in Russian unless the original user request is written in
 Russian.
-
-
 
 Language Rules
 

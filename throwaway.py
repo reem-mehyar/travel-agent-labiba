@@ -19,9 +19,8 @@ import json
 for place in attractions:
     print(place.get("title"), "-", place.get("address"), "-", place.get("rating"))"""
 
-from skills.attractions_skill import AttractionSkill
+from api.serpapi_api import serpapi_request
+import json
 
-from api.serpapi_api import search_places_near
-
-print(search_places_near("Acropolis Museum, Athens", "coffee shops"))
-print(search_places_near("Shibuya Crossing, Tokyo", "ramen restaurants"))
+data = serpapi_request({"engine": "google_maps", "q": "K-POP HOTEL Seoul Tower", "type": "search"})
+print(json.dumps(data, indent=2))

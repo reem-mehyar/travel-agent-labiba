@@ -100,23 +100,11 @@ def autocomplete_flight_location(query: str) -> list[dict]:
 # ----------------------------------------------------
 def search_places_near(anchor_name: str, query: str) -> list[dict]:
     """
-    Resolves any named place (hotel, landmark, address, etc.) to coordinates
-    via a plain query search, then searches for other places near it.
-    Works for any anchor — not hotel-specific.
+    Resolves any named place (hotel, landmark, address, etc.) to coordinates,
+    then searches for other places near it.
     """
-    anchor_params = {
-        "engine": "google_maps",
-        "q": anchor_name,
-        "type": "search",
-    }
-    anchor_data = serpapi_request(anchor_params)
-    anchor_matches = anchor_data.get("local_results", [])
-
-    if not anchor_matches:
-        return []
-
-    coords = anchor_matches[0].get("gps_coordinates")
-    if not coords:
+    coords = _resolve_anchor_coordinates(anchor_name)
+    if coords is None:
         return []
 
     ll = f"@{coords['latitude']},{coords['longitude']},14z"
@@ -129,6 +117,24 @@ def search_places_near(anchor_name: str, query: str) -> list[dict]:
     }
     nearby_data = serpapi_request(nearby_params)
     return nearby_data.get("local_results", [])
+
+
+def _resolve_anchor_coordinates(anchor_name: str) -> dict | None:
+    """
+    Google Maps returns either a 'local_results' list (multiple matches)
+    or a single 'place_results' object (one exact match) — check both.
+    """
+    data = serpapi_request({"engine": "google_maps", "q": anchor_name, "type": "search"})
+
+    place = data.get("place_results")
+    if place and place.get("gps_coordinates"):
+        return place["gps_coordinates"]
+
+    local_results = data.get("local_results", [])
+    if local_results and local_results[0].get("gps_coordinates"):
+        return local_results[0]["gps_coordinates"]
+
+    return None
 
 TRAVEL_MODE_CODES = {
     "driving": 0,
