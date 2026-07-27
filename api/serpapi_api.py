@@ -98,20 +98,37 @@ def autocomplete_flight_location(query: str) -> list[dict]:
 # ----------------------------------------------------
 # Google Places
 # ----------------------------------------------------
-def search_places(location: str, query: str = "attractions",) -> list[dict]:
+def search_places_near(anchor_name: str, query: str) -> list[dict]:
+    """
+    Resolves any named place (hotel, landmark, address, etc.) to coordinates
+    via a plain query search, then searches for other places near it.
+    Works for any anchor — not hotel-specific.
+    """
+    anchor_params = {
+        "engine": "google_maps",
+        "q": anchor_name,
+        "type": "search",
+    }
+    anchor_data = serpapi_request(anchor_params)
+    anchor_matches = anchor_data.get("local_results", [])
 
-    params = {
+    if not anchor_matches:
+        return []
+
+    coords = anchor_matches[0].get("gps_coordinates")
+    if not coords:
+        return []
+
+    ll = f"@{coords['latitude']},{coords['longitude']},14z"
+    nearby_params = {
         "engine": "google_maps",
         "q": query,
+        "ll": ll,
         "type": "search",
-        "location": location,
-        "m": 10000,
+        "nearby": True,
     }
-
-    data = serpapi_request(params)
-
-    return data.get("local_results", [])
-
+    nearby_data = serpapi_request(nearby_params)
+    return nearby_data.get("local_results", [])
 
 TRAVEL_MODE_CODES = {
     "driving": 0,

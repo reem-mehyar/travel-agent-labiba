@@ -1,7 +1,5 @@
 
-
-from api.serpapi_api import search_hotel_reviews, search_hotels, search_flights, search_places, search_flight_deals, autocomplete_flight_location
-import json 
+import json
 
 #result = search_flight_deals("AMM", outbound_date= "2026-08-01", return_date = "2026-08-05")
 """result = search_flight_deals(
@@ -23,21 +21,7 @@ for place in attractions:
 
 from skills.attractions_skill import AttractionSkill
 
-skill = AttractionSkill()
+from api.serpapi_api import search_places_near
 
-# Test nearby search
-result1 = skill.execute({
-    "attraction_request_type": "search_nearby",
-    "search_query": "coffee shops",
-    "anchor_location": "Grand Hyatt Athens, Athens",
-})
-print(result1)
-
-# Test distance
-result2 = skill.execute({
-    "attraction_request_type": "distance",
-    "directions_origin": "Grand Hyatt Athens",
-    "directions_destination": "Acropolis Museum",
-    "travel_mode": "walking",
-})
-print(result2)
+print(search_places_near("Acropolis Museum, Athens", "coffee shops"))
+print(search_places_near("Shibuya Crossing, Tokyo", "ramen restaurants"))

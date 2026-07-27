@@ -1,4 +1,4 @@
-from api.serpapi_api import search_places, get_directions
+from api.serpapi_api import search_places_near, get_directions
 
 
 class AttractionSkill:
@@ -35,11 +35,13 @@ class AttractionSkill:
             return missing
         
         try:
-            results = search_places(query, location=anchor_location)
-       
+            results = search_places_near(anchor_location, query)
         except Exception:
             return {"nearby_places": [], "note": f"Could not find results for '{query}' near '{anchor_location}'."}
     
+        if not results:
+            return {"nearby_places": [], "note": f"Could not locate '{anchor_location}' to search nearby."}
+
         cleaned = [
             {
                 "name": p.get("title"),
