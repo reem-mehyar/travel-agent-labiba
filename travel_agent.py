@@ -8,7 +8,8 @@ from skills.flight_skill import FlightSkill
 from skills.planner_skill import PlannerSkill
 from skills.currency_skill import CurrencySkill
 from skills.weather_skill import WeatherSkill
-from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT
+from skills.itinerary_skill import ItinerarySkill
+from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT, ITINERARY_PROMPT
 
 
 RESET_PHRASES = {"start over", "new search", "reset", "forget that", "cancel"}
@@ -37,6 +38,12 @@ class TravelAgent:
             "planner": PlannerSkill()
         }
         self.currency_skill = ServiceProvider.currency_skill()
+
+        # ItinerarySkill is never selected via intent — it's triggered
+        # programmatically right after a successful "planner" run, so it
+        # lives outside self.skills (which is only for intent-selectable skills).
+        self.itinerary_skill = ItinerarySkill()
+
         self.conversation_history = []
         self.pending_intent = {}
 
@@ -92,7 +99,6 @@ class TravelAgent:
 
         # 5. Execute the requested skill(s)
         skill_result = self._execute_skill(merged_intent)
-        
 
         # 6. Still missing fields -> remember progress, ask for the rest
         if self._missing_information(skill_result, requested_skills):
@@ -108,7 +114,21 @@ class TravelAgent:
 
         # 7. Completed successfully -> reset for next request
         self.pending_intent = {}
-        response = self._generate_final_response(user_message=user_message, search_results=skill_result)
+
+        # 7.5 If the planner produced a valid trip, automatically build
+        # and generate a day-by-day itinerary from the remaining budget.
+        if "planner" in requested_skills and "planned_trip" in skill_result:
+            response = self._handle_planner_result(
+                user_message=user_message,
+                intent_data=merged_intent,
+                planner_result=skill_result,
+            )
+        else:
+            response = self._generate_final_response(
+                user_message=user_message,
+                search_results=skill_result,
+            )
+
         self.conversation_history.append({"role": "assistant", "content": response})
         return response
 
@@ -190,7 +210,7 @@ class TravelAgent:
             if old_value and new_value and old_value != new_value:
                 return True
         return False
-    
+
     def _generate_final_response(self, user_message: str, search_results: dict) -> str:
 
         currency_note = (
@@ -209,4 +229,66 @@ class TravelAgent:
         return self.openai_client.generate_response(
             system_prompt=FINAL_RESPONSE_PROMPT,
             user_input=final_prompt,
+        )
+
+    # ------------------------------------------------------------
+    # Itinerary generation (triggered automatically after PlannerSkill)
+    # ------------------------------------------------------------
+
+    def _handle_planner_result(
+        self,
+        user_message: str,
+        intent_data: dict,
+        planner_result: dict,
+    ) -> str:
+        """
+        Automatically builds and generates a day-by-day itinerary after a
+        successful PlannerSkill run. Falls back to the standard
+        FINAL_RESPONSE_PROMPT formatting if an itinerary cannot be built
+        (e.g. missing dates, no valid combo), so the user still gets a
+        useful response instead of an error.
+        """
+
+        itinerary_result = self.itinerary_skill.execute(intent_data, planner_result)
+        itinerary_payload = itinerary_result.get("itinerary_payload")
+
+        if itinerary_payload is None:
+            return self._generate_final_response(
+                user_message=user_message,
+                search_results=planner_result,
+            )
+
+        return self._generate_itinerary_response(
+            user_message=user_message,
+            itinerary_payload=itinerary_payload,
+        )
+
+    def _generate_itinerary_response(
+        self,
+        user_message: str,
+        itinerary_payload: dict,
+    ) -> str:
+        """
+        Sends the structured itinerary payload to OpenAI using
+        ITINERARY_PROMPT. This is the ONLY place ItinerarySkill's output
+        ever reaches OpenAI — the Skill itself never calls it directly,
+        preserving the "Skills never talk to OpenAI" architecture rule.
+        """
+
+        currency_note = (
+            f"\n\nAll prices are in {itinerary_payload.get('currency', 'USD')}."
+            if itinerary_payload.get("currency") else ""
+        )
+
+        prompt = (
+            f"Original User Request:\n"
+            f"{user_message}\n\n"
+            f"Itinerary Data:\n"
+            f"{json.dumps(itinerary_payload, indent=2, ensure_ascii=False)}"
+            f"{currency_note}"
+        )
+
+        return self.openai_client.generate_response(
+            system_prompt=ITINERARY_PROMPT,
+            user_input=prompt,
         )
