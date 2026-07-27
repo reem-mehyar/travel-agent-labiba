@@ -6,6 +6,7 @@ from providers.service_provider import ServiceProvider
 from skills.hotel_skill import HotelSkill
 from skills.flight_skill import FlightSkill
 from skills.planner_skill import PlannerSkill
+from skills.attractions_skill import AttractionSkill
 from skills.currency_skill import CurrencySkill
 from skills.weather_skill import WeatherSkill
 from skills.itinerary_skill import ItinerarySkill
@@ -35,7 +36,8 @@ class TravelAgent:
             "hotel": HotelSkill(),
             "flight": FlightSkill(),
             "weather": WeatherSkill(),
-            "planner": PlannerSkill()
+            "planner": PlannerSkill(),
+            "attractions": AttractionSkill(),
         }
         self.currency_skill = ServiceProvider.currency_skill()
 
@@ -192,11 +194,13 @@ class TravelAgent:
         Determine whether any of the requested skills failed to return
         their expected result key.
         """
-        expected_keys = {
-            self.SKILL_RESULT_KEYS[s]
-            for s in requested_skills
-            if s in self.SKILL_RESULT_KEYS
-        }
+        expected_keys = set()
+        for s in requested_skills:
+            if s == "attractions":
+                expected_keys.update({"nearby_places", "directions"})
+            elif s in self.SKILL_RESULT_KEYS:
+                expected_keys.add(self.SKILL_RESULT_KEYS[s])
+       
         return not any(key in skill_result for key in expected_keys)
 
     def _detect_topic_change(self, old_intent: dict, new_intent: dict) -> bool:

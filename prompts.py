@@ -135,6 +135,19 @@ Do this even though the user only mentioned the date range once. Do not
 leave check_in/check_out null just because departure_date/return_date
 were already filled from the same phrase.
 
+For "attractions" requests, also determine "attraction_request_type":
+- "search_nearby" — user wants to find something near a location
+  (e.g. "coffee near my hotel", "restaurants close to the Acropolis")
+  Requires: "search_query" (what they're looking for, e.g. "coffee shops"),
+  "anchor_location" (the reference point, e.g. a hotel name or landmark)
+- "distance" — user wants distance/travel time between two specific places
+  (e.g. "how far is the Colosseum from my hotel")
+  Requires: "directions_origin", "directions_destination"
+  Optional: "travel_mode" ("driving", "walking", "cycling", "transit" — default "driving")
+
+If the user references "my hotel" and a hotel was already found earlier in
+the conversation, use that hotel's name as anchor_location / directions_origin.
+
 Supported skill values (use these exact strings, do not pluralize or modify them):
 - "hotel"
 - "flight"
@@ -142,6 +155,7 @@ Supported skill values (use these exact strings, do not pluralize or modify them
 - "unclear"
 - "none"
 - "planner"
+- "attractions" 
 
 # Output shape
 

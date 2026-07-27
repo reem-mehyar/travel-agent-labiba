@@ -21,7 +21,23 @@ import json
 for place in attractions:
     print(place.get("title"), "-", place.get("address"), "-", place.get("rating"))"""
 
-from api.serpapi_api import search_flights
+from skills.attractions_skill import AttractionSkill
 
-results = search_flights("AMM", "ATH", "2026-08-01")
-print("Got", len(results), "results")
+skill = AttractionSkill()
+
+# Test nearby search
+result1 = skill.execute({
+    "attraction_request_type": "search_nearby",
+    "search_query": "coffee shops",
+    "anchor_location": "Grand Hyatt Athens, Athens",
+})
+print(result1)
+
+# Test distance
+result2 = skill.execute({
+    "attraction_request_type": "distance",
+    "directions_origin": "Grand Hyatt Athens",
+    "directions_destination": "Acropolis Museum",
+    "travel_mode": "walking",
+})
+print(result2)

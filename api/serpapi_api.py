@@ -62,11 +62,7 @@ def search_flights(origin: str, destination: str, outbound_date: str, return_dat
 # ----------------------------------------------------
 # Flight Deals
 # ----------------------------------------------------
-def search_flight_deals(
-    departure_id: str,
-    currency: str = "JOD",
-    **kwargs,
-) -> dict:
+def search_flight_deals(departure_id: str, currency: str = "JOD", **kwargs,) -> dict:
 
     params = {
         "engine": "google_flights_deals",
@@ -102,10 +98,7 @@ def autocomplete_flight_location(query: str) -> list[dict]:
 # ----------------------------------------------------
 # Google Places
 # ----------------------------------------------------
-def search_places(
-    location: str,
-    query: str = "attractions",
-) -> list[dict]:
+def search_places(location: str, query: str = "attractions",) -> list[dict]:
 
     params = {
         "engine": "google_maps",
@@ -119,6 +112,40 @@ def search_places(
 
     return data.get("local_results", [])
 
+
+TRAVEL_MODE_CODES = {
+    "driving": 0,
+    "walking": 2,
+    "cycling": 1, 
+    "transit": 3, 
+    "best": 6,
+}
+
+def get_directions(start: str, end: str, mode: str = "driving") -> dict:
+    """
+    Google Maps Directions engine — returns distance/duration between two places.
+    start / end: plain addresses or place names (e.g. "Grand Hyatt Athens").
+    mode: "driving", "walking", "cycling", "transit", or "best".
+    """
+    travel_mode_code = TRAVEL_MODE_CODES.get(mode.lower(), 0)
+
+    params = {
+        "engine": "google_maps_directions",
+        "start_addr": start,
+        "end_addr": end,
+        "travel_mode": travel_mode_code,
+    }
+    data = serpapi_request(params)
+    directions = data.get("directions", [])
+    if not directions:
+        return {}
+
+    top = directions[0]
+    return {
+        "distance": top.get("formatted_distance"),
+        "duration": top.get("formatted_duration"),
+        "travel_mode": top.get("travel_mode"),
+    }
 
 # ----------------------------------------------------
 # Hotel Reviews

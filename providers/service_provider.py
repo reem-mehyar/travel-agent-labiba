@@ -4,6 +4,7 @@ from skills.flight_skill import FlightSkill
 from skills.weather_skill import WeatherSkill
 from skills.currency_skill import CurrencySkill
 from skills.planner_skill import PlannerSkill
+from skills.attractions_skill import AttractionSkill
 
 class ServiceProvider:
 
@@ -30,3 +31,7 @@ class ServiceProvider:
     @staticmethod
     def planner_skill():
         return PlannerSkill()
+    
+    @staticmethod
+    def attractions_skill():
+        return AttractionSkill()
