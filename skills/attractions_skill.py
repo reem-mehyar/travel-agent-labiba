@@ -63,10 +63,8 @@ class AttractionSkill:
         
         if origin is None: 
             missing["directions_origin"] = None
-        
         if destination is None:
             missing["directions_destination"] = None
-
         if missing:
             return missing
         
@@ -76,7 +74,21 @@ class AttractionSkill:
             return {"directions": {}, "note": f"Could not find directions from '{origin}' to '{destination}'."}
 
         if not result:
+            anchor_city = self._extract_city_hint(intent_data)
+            if anchor_city and anchor_city.lower() not in destination.lower():
+                try:
+                    result = get_directions(origin, f"{destination}, {anchor_city}", mode=mode)
+                except Exception:
+                    result = None
+
+        if not result:
             return {"directions": {}, "note": f"No route found from '{origin}' to '{destination}'."}
-        
+
         return {"directions": result}
-    
+
+    def _extract_city_hint(self, intent_data: dict) -> str | None:
+        """Pulls a city name from wherever it might be available in the intent."""
+        for field in ("destination_city", "location"):
+            if intent_data.get(field):
+                return intent_data[field]
+        return None

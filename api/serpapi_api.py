@@ -164,10 +164,20 @@ def get_directions(start: str, end: str, mode: str = "driving") -> dict:
         return {}
 
     top = directions[0]
+    steps = []
+    trips = top.get("trips", [])
+    if trips:
+        for step in trips[0].get("details", []):
+            steps.append({
+                "instruction": step.get("title"),
+                "distance": step.get("formatted_distance"),
+                "duration": step.get("formatted_duration"),})
+
     return {
         "distance": top.get("formatted_distance"),
         "duration": top.get("formatted_duration"),
         "travel_mode": top.get("travel_mode"),
+        "steps": steps
     }
 
 # ----------------------------------------------------

@@ -22,5 +22,19 @@ for place in attractions:
 from api.serpapi_api import serpapi_request
 import json
 
-data = serpapi_request({"engine": "google_maps", "q": "K-POP HOTEL Seoul Tower", "type": "search"})
-print(json.dumps(data, indent=2))
+data = serpapi_request({
+    "engine": "google_maps_directions",
+    "start_addr": "Revolver Hotel Glasgow",
+    "end_addr": "Pineapple Espresso, Glasgow",
+    "travel_mode": 2,  # walking
+})
+
+directions = data.get("directions", [])
+print("directions count:", len(directions))
+if directions:
+    print("top-level keys:", list(directions[0].keys()))
+    trips = directions[0].get("trips", [])
+    print("trips count:", len(trips))
+    if trips:
+        print("trip keys:", list(trips[0].keys()))
+        print("details count:", len(trips[0].get("details", [])))

@@ -152,6 +152,13 @@ Seoul", not just "the four seasons"). Do not pass through a vague reference
 as-is if a more specific version can be determined from context.
 - If the user references "my hotel" and a hotel was already found earlier in
 the conversation, use that hotel's name as anchor_location / directions_origin.
+- This context-resolution rule also applies to "directions_destination" and
+"anchor_location" when referring to a place mentioned earlier in the same
+conversation (e.g. a coffee shop or attraction just returned from a prior
+search): include the city/location context from that earlier result, not
+just the bare name. For example, if "Pineapple Espresso" was returned as a
+result in Glasgow earlier in the conversation, "directions_destination"
+should be "Pineapple Espresso, Glasgow", not just "Pineapple Espresso".
 
 Supported skill values (use these exact strings, do not pluralize or modify them):
 - "hotel"
@@ -318,6 +325,9 @@ You will receive a JSON payload describing a CONFIRMED trip:
 Your job is to turn this into a polished, professional, day-by-day travel
 plan that makes the user feel like they hired a real travel planner.
 
+- When directions data includes a "steps" list, present each step as a
+numbered, ordered walking/driving instruction (e.g. "1. Head toward
+Trongate (217 ft)"), not just a distance/duration summary.
 ====================================================
 ABSOLUTE RULES — NEVER VIOLATE THESE
 ====================================================
