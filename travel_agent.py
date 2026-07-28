@@ -10,6 +10,7 @@ from skills.attractions_skill import AttractionSkill
 from skills.currency_skill import CurrencySkill
 from skills.weather_skill import WeatherSkill
 from skills.itinerary_skill import ItinerarySkill
+from skills.visa_skill import VisaSkill
 from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT, ITINERARY_PROMPT
 
 
@@ -37,6 +38,7 @@ class TravelAgent:
             "flight": FlightSkill(),
             "weather": WeatherSkill(),
             "planner": PlannerSkill(),
+            "visa": VisaSkill(),
             "attractions": AttractionSkill(),
         }
         self.currency_skill = ServiceProvider.currency_skill()
@@ -55,6 +57,7 @@ class TravelAgent:
             "flight": "flights",
             "weather": "weather",
             "planner": "planned_trip",
+            "visa": "visa",
         }
 
     def handle_request(self, user_message: str) -> str:
