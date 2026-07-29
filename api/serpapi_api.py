@@ -79,7 +79,6 @@ def search_flight_deals(departure_id: str, currency: str = "JOD", **kwargs,) -> 
         "deals": data.get("deals", []),
     }
 
-
 # ----------------------------------------------------
 # Flight Autocomplete
 # ----------------------------------------------------
@@ -93,7 +92,6 @@ def autocomplete_flight_location(query: str) -> list[dict]:
     data = serpapi_request(params)
 
     return data.get("suggestions", [])
-
 
 # ----------------------------------------------------
 # Google Places
@@ -179,6 +177,22 @@ def get_directions(start: str, end: str, mode: str = "driving") -> dict:
         "travel_mode": top.get("travel_mode"),
         "steps": steps
     }
+
+def search_places_in_city(location: str, query: str = "top attractions"):
+
+    params = {
+        "engine": "google_maps",
+        "q": f"{query} in {location}",
+        "type": "search", 
+    }
+    data = serpapi_request(params)
+
+    if "local_results" in data:
+        return data["local_results"]
+    place = data.get("place_results")
+    if place:
+        return [place]
+    return []
 
 # ----------------------------------------------------
 # Hotel Reviews

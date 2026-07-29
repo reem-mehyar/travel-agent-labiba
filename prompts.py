@@ -35,8 +35,8 @@ Available Skills
 Hotel Skill
 Flight Skill
 Weather Skill
+Attractions Skill
 Planner Skill
-
 Visa Skill
 
 Provides visa and travel entry information including:
@@ -171,6 +171,15 @@ For "attractions" requests, also determine "attraction_request_type":
   (e.g. "how far is the Colosseum from my hotel")
   Requires: "directions_origin", "directions_destination"
   Optional: "travel_mode" ("driving", "walking", "cycling", "transit" — default "driving")
+- "city_search" —  the user wants attractions, landmarks, activities, or
+  places to visit in a city or destination.
+  Examples:
+  - "What are the best attractions in Rome?"
+  - "Things to do in Istanbul"
+  - "Show me tourist places in Paris"
+  Requires: "location": the city or destination
+  Optional: "search_query": the requested category, such as "tourist attractions", "museums", "historical attractions", or "family activities"
+
 - When "anchor_location" refers to a hotel or place mentioned earlier in the
 conversation (e.g. "the four seasons", "my hotel", "that place"), resolve it
 using the full context from earlier turns — including the city — and populate
@@ -299,6 +308,12 @@ per skill. Fields not relevant to the requested skill(s) should be null.
     "budget": null,
     "passport_country": null,
     "destination_country": null,
+    "attraction_request_type": null,
+    "search_query": null,
+    "anchor_location": null,
+    "directions_origin": null,
+    "directions_destination": null,
+    "travel_mode": null,
     "visa_intent": null
 }
 
@@ -627,7 +642,7 @@ TRIP TIPS
 
 ## Trip Tips
 
-Include 4–6 short, practical, destination-appropriate tips, such as:
+Include 4-6 short, practical, destination-appropriate tips, such as:
 - Transit pass or ticket-saving advice.
 - Booking attractions online in advance where it saves time/money.
 - Practical carry items (water bottle, comfortable shoes, adapter, etc.).

@@ -1,4 +1,4 @@
-from api.serpapi_api import search_places_near, get_directions
+from api.serpapi_api import search_places_near, search_places_in_city, get_directions
 
 
 class AttractionSkill:
@@ -18,6 +18,9 @@ class AttractionSkill:
         elif request_type == "distance":
             return self._get_distance(intent_data)
         
+        elif request_type == "city_search":
+            return self._search_city(intent_data)
+    
         else:
             return {"attraction_request_type": None}
         
@@ -92,3 +95,31 @@ class AttractionSkill:
             if intent_data.get(field):
                 return intent_data[field]
         return None
+    
+    def _search_city(self, intent_data: dict) -> dict:
+
+        location = intent_data.get("location")
+        query = intent_data.get("search_query") or "top attractions"
+
+        if location is None:
+            return {"location": None}
+        
+        try:
+            results = search_places_in_city(location, query)
+        except Exception:
+            return {"nearby places": [], "note": f"Could not find nearby attractions in '{location}'. "}
+        
+        if not results:
+            return {"nearby_places": [], "note": f"Could not find attractions in '{location}'. "}
+        
+        cleaned = [
+            {
+                "name": p.get("title"),
+                "address": p.get("address"),
+                "rating": p.get("rating"),
+                "type": p.get("type"),
+            }
+            for p in results[:8]
+        ]
+
+        return {"nearby_places": cleaned, "location": location}
