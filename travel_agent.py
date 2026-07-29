@@ -102,6 +102,24 @@ class TravelAgent:
         # skills requested should reflect the current message, not stale history
         merged_intent["skills"] = requested_skills
 
+        # Handle visa advice without calling the Visa API
+        if (
+            "visa" in requested_skills
+            and merged_intent.get("visa_intent") == "advice"
+        ):
+            self.pending_intent = {}
+
+            response = self._generate_final_response(
+                user_message=user_message,
+                search_results={}
+            )
+
+            self.conversation_history.append(
+                {"role": "assistant", "content": response}
+            )
+
+            return response
+
         # 5. Execute the requested skill(s)
         skill_result = self._execute_skill(merged_intent)
 

@@ -187,7 +187,7 @@ just the bare name. For example, if "Pineapple Espresso" was returned as a
 result in Glasgow earlier in the conversation, "directions_destination"
 should be "Pineapple Espresso, Glasgow", not just "Pineapple Espresso".
 
-visa
+Visa
 
 Use this skill whenever the user asks about:
 
@@ -198,14 +198,53 @@ Use this skill whenever the user asks about:
 - Entry requirements
 - Entry restrictions
 - Tourist visa
+- Visa processing time
+- Visa fees
+- Visa application status
+- Visa approval chances
+- Visa application advice
+- Visa refusal reasons
+- General visa information
 
-For "visa" requests, extract:
+For "visa" requests, determine the value of "visa_intent":
+
+- "lookup"
+  Use when the user is asking about visa requirements or entry rules for a specific destination.
+  These requests require checking visa information using the Visa API.
+
+  Examples:
+  - Do I need a visa for France?
+  - Visa requirements for Japan
+  - Can Jordanians travel to Canada without a visa?
+  - What documents do I need for a UK tourist visa?
+
+- "advice"
+  Use when the user is asking for general visa guidance, explanations, recommendations,
+  approval chances, processing advice, or other questions that do not require checking
+  a country's visa requirements.
+
+  Examples:
+  - Guarantee that my visa application will be approved.
+  - How can I improve my chances of getting a visa?
+  - Why are visa applications rejected?
+  - Explain what a Schengen visa is.
+  - What is a multiple-entry visa?
+
+For "lookup" requests, extract:
+
 - "passport_country" — the traveler's nationality/passport country.
   If the user doesn't state it but it was established earlier in the
   conversation, reuse it. If it's genuinely unknown, leave it null so
   the TravelAgent can ask for it.
-- "destination_country" — the country being asked about. Use the full
-  country name or a well-known ISO country code consistently.
+
+- "destination_country" — the country being asked about.
+  Use the full country name or a well-known ISO country code consistently.
+
+For "advice" requests:
+
+- Set "visa_intent" to "advice".
+- Do not require passport_country or destination_country unless the user is asking about a specific country.
+- Leave unavailable fields as null.
 
 If the user asks only about visa requirements, return:
 
@@ -260,10 +299,11 @@ per skill. Fields not relevant to the requested skill(s) should be null.
     "budget": null,
     "passport_country": null,
     "destination_country": null,
+    "visa_intent": null
 }
 
 Field notes:
-  If the weather request shares the same trip dates as a hotel/flight request
+- If the weather request shares the same trip dates as a hotel/flight request
   in the same message, reuse those dates for start_date/end_date too.
 - "currency" is not a skill — it's a modifier. If the user specifies a
   currency (e.g. "in JOD", "in euros", "show prices in dollars"), extract
@@ -276,8 +316,12 @@ Field notes:
   "destination_city" (for the flight) AND "location" (for the hotel) with that
   same city.
 - "start_date" / "end_date" are used for weather requests.
-- "passport_country" / "destination_country" are used for "visa" requests only.
-  
+- "passport_country" / "destination_country" are used for "visa" lookup requests only.
+- "visa_intent" must be:
+  - "lookup" for visa requirement or entry rule requests.
+  - "advice" for general visa questions, explanations, recommendations, approval chances, or guidance.
+  - null for non-visa requests.
+
 --------------------------------------------------
 # Rules
 
