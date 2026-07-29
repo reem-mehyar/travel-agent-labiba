@@ -33,12 +33,14 @@ class VisaSkill:
 
             if passport_code is None:
                 return {
-                    "passport_country": None
+                    "visa": None,
+                    "error": (f"Could not resolve passport country." f"'{intent_data['passport_country']}'.")
                 }
 
             if destination_code is None:
                 return {
-                    "destination_country": None
+                    "visa": None,
+                    "error": (f"Could not resolve destination country." f"'{intent_data['destination_country']}'.")
                 }
 
             raw_response = self.visa_api.get_visa_requirements(
