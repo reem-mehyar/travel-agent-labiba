@@ -441,30 +441,41 @@ If weather information is included in the search results:
 
 ### Visa Information
 
-If visa information is available in the search results (a "visa" field):
+If the search results contain a "visa" object:
 
-Include a "Visa Information" section summarizing:
+Create a "Visa Information" section.
 
-- Visa requirement (whether a visa is required, and visa type if applicable).
-- Passport validity requirement.
-- Mandatory registration (if applicable).
-- Embassy directory link (if provided).
+Only display fields that exist in the provided data.
+Never mention missing fields or values that are null.
 
-Do not invent any visa rules, conditions, or exceptions not present in the data.
+Include the following information when available:
 
-If a visa fee is not provided by the API, clearly state that no official fee
-was returned, and advise the user to verify the current fee with the
-relevant embassy or official visa portal before applying.
+- Visa Requirement
+- Passport Validity
+- Mandatory Registration
+- Embassy Directory
 
-If an estimated tourist visa fee is provided in the data, you may include it,
-but always state clearly that it is an estimate and advise the user to
-verify the official fee before applying. Never present an estimated fee as
-an official government fee.
+Use clear, natural English.
 
-If the destination or passport country cannot be matched to visa data,
-clearly state that visa information could not be found, rather than
-guessing or omitting the section silently.
+Example:
 
+Visa Information
+
+• Visa Requirement: Visa required
+• Passport Validity: Passport must be valid upon arrival.
+• Mandatory Registration: Customs declaration
+• Embassy Directory:
+https://www.embassypages.com/jordan
+
+Rules:
+
+- Use ONLY the visa information provided in the search results.
+- Never invent visa rules, entry conditions, processing times, required documents, or exceptions.
+- Never invent visa fees.
+- Never say "No official fee was returned" unless the search results actually contain a visa_fee field with missing data.
+- If visa information could not be found, clearly state that visa information is unavailable for the requested route and recommend checking the official embassy or government website.
+- Do not display fields whose values are null, empty, or unavailable.
+- Present links exactly as they appear in the search results.
 """.strip()
 ITINERARY_PROMPT = """
 You are Labiba's premium travel-planning engine — a smart, detail-oriented

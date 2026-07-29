@@ -34,13 +34,19 @@ class VisaSkill:
             if passport_code is None:
                 return {
                     "visa": None,
-                    "error": (f"Could not resolve passport country." f"'{intent_data['passport_country']}'.")
+                    "error": (
+                        f"Could not resolve passport country "
+                        f"'{intent_data['passport_country']}'."
+                    )
                 }
 
             if destination_code is None:
                 return {
                     "visa": None,
-                    "error": (f"Could not resolve destination country." f"'{intent_data['destination_country']}'.")
+                    "error": (
+                        f"Could not resolve destination country "
+                        f"'{intent_data['destination_country']}'."
+                    )
                 }
 
             raw_response = self.visa_api.get_visa_requirements(
@@ -48,8 +54,20 @@ class VisaSkill:
                 destination_code=destination_code,
             )
 
+            print("\n" + "=" * 80)
+            print("Visa API Response:")
+            print(raw_response)
+            print("=" * 80)
+
+            cleaned_data = self._clean_visa_data(raw_response)
+
+            print("\n" + "=" * 80)
+            print("Cleaned Visa Data:")
+            print(cleaned_data)
+            print("=" * 80 + "\n")
+
             return {
-                "visa": self._clean_visa_data(raw_response)
+                "visa": cleaned_data
             }
 
         except Exception as e:
