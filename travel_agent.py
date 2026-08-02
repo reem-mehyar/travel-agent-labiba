@@ -11,6 +11,7 @@ from skills.currency_skill import CurrencySkill
 from skills.weather_skill import WeatherSkill
 from skills.itinerary_skill import ItinerarySkill
 from skills.visa_skill import VisaSkill
+from skills.recommendation_skill import RecommendationSkill
 from prompts import INTENT_PROMPT, SYSTEM_PROMPT, FINAL_RESPONSE_PROMPT, ITINERARY_PROMPT
 
 
@@ -40,6 +41,7 @@ class TravelAgent:
             "planner": PlannerSkill(),
             "visa": VisaSkill(),
             "attractions": AttractionSkill(),
+            "recommendation": RecommendationSkill(),
         }
         self.currency_skill = ServiceProvider.currency_skill()
 
@@ -114,6 +116,20 @@ class TravelAgent:
                 search_results={}
             )
 
+            self.conversation_history.append(
+                {"role": "assistant", "content": response}
+            )
+
+            return response
+
+        # Handle recommendation workflow
+        if "recommendation" in requested_skills:
+            response = self._handle_recommendation(
+                user_message=user_message,
+                intent_data=merged_intent,
+            )
+
+            self.pending_intent = {}
             self.conversation_history.append(
                 {"role": "assistant", "content": response}
             )
@@ -254,6 +270,90 @@ class TravelAgent:
         return self.openai_client.generate_response(
             system_prompt=FINAL_RESPONSE_PROMPT,
             user_input=final_prompt,
+        )
+
+
+
+    def _handle_recommendation(
+        self,
+        user_message: str,
+        intent_data: dict,
+    ) -> str:
+
+        recommendation_result = self.skills["recommendation"].execute(intent_data)
+
+        destinations = recommendation_result.get(
+            "recommended_destinations",
+            []
+        )
+
+        if not destinations:
+            return "I couldn't find suitable destinations."
+
+        trips = []
+
+        for destination in destinations:
+
+            trip_intent = intent_data.copy()
+
+            # FlightSkill fields
+            trip_intent["destination_city"] = destination
+
+            # HotelSkill fields
+            trip_intent["location"] = destination
+
+            trip_intent["check_in"] = intent_data["departure_date"]
+            trip_intent["check_out"] = intent_data["return_date"]
+
+            flight_result = self.skills["flight"].execute(trip_intent)
+            hotel_result = self.skills["hotel"].execute(trip_intent)
+
+            flights = flight_result.get("flights", [])
+            hotels = hotel_result.get("hotels", [])
+
+            if not flights or not hotels:
+                continue
+
+            cheapest_flight = flights[0]
+            cheapest_hotel = hotels[0]
+
+            flight_price = cheapest_flight.get("price") or 0
+
+            raw_hotel_price = cheapest_hotel.get("total_price") or 0
+            if isinstance(raw_hotel_price, str):
+                hotel_price = float(
+                    raw_hotel_price.replace("US$", "").replace("$", "").replace(",", "").strip() or 0
+                )
+            else:
+                hotel_price = raw_hotel_price
+
+            total_cost = flight_price + hotel_price
+            budget = intent_data.get("budget")
+
+            trips.append({
+                "destination": destination,
+                "flight": cheapest_flight,
+                "hotel": cheapest_hotel,
+                "total_cost": total_cost,
+                "remaining_budget": (budget - total_cost) if budget is not None else None,
+                "fits_budget": (total_cost <= budget) if budget is not None else None,
+            })
+        if not trips:
+          return (
+        "I couldn't find any destinations with available flights "
+        "and hotels for your request."
+    )
+
+        trips.sort(key=lambda x: x["total_cost"])
+        trips.sort(key=lambda x: x["total_cost"])
+
+        return self._generate_final_response(
+            user_message=user_message,
+            search_results={
+                "recommended_trips": trips,
+                "budget": intent_data.get("budget"),
+                "currency": intent_data.get("currency", "USD"),
+            },
         )
 
     # ------------------------------------------------------------
