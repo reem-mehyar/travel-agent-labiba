@@ -240,15 +240,26 @@ For "visa" requests, determine the value of "visa_intent":
   - Explain what a Schengen visa is.
   - What is a multiple-entry visa?
 
-For "lookup" requests, extract:
+For "lookup" requests, or for a "planner" request that also mentions
+nationality/visa/passport information, extract:
 
 - "passport_country" — the traveler's nationality/passport country.
-  If the user doesn't state it but it was established earlier in the
-  conversation, reuse it. If it's genuinely unknown, leave it null so
-  the TravelAgent can ask for it.
+  Convert nationality adjectives to the country name (e.g. "Jordanian" ->
+  "Jordan", "Egyptian" -> "Egypt", "American" -> "United States"). If the
+  user doesn't state it but it was established earlier in the conversation,
+  reuse it. If it's genuinely unknown, leave it null so the TravelAgent
+  can ask for it.
 
-- "destination_country" — the country being asked about.
-  Use the full country name or a well-known ISO country code consistently.
+- "destination_country" — the country being asked about. If the user only
+  gives a city (e.g. "London"), infer the country it belongs to (e.g.
+  "United Kingdom") and use the full country name or a well-known ISO
+  country code consistently.
+
+Always populate these two fields whenever the message contains visa,
+nationality, or passport information — regardless of whether the skill
+returned is "visa" or "planner". PlannerSkill needs them internally even
+though "visa" isn't a separate entry in the skills list for a combined
+planner+visa request.
 
 For "advice" requests:
 
@@ -257,11 +268,7 @@ For "advice" requests:
 - Leave unavailable fields as null.
 
 If the user asks only about visa requirements, return:
-
 ["visa"]
-
-If the user asks for a complete trip plan, return:
-
 
 Recommendation
 
@@ -301,7 +308,9 @@ and the user wants you to build the complete trip around that destination.
 Do not return both planner and visa together because PlannerSkill already
 includes VisaSkill internally. Never return ["planner", "visa"] — if a
 budget/full-trip-plan request also mentions visa, still return only
-["planner"], since the planner already handles visa internally.
+["planner"], since the planner already handles visa internally. Still
+extract passport_country/destination_country as described above even
+though "visa" doesn't appear in the skills list.
 
 Available skills:
 - hotel
@@ -366,7 +375,10 @@ Field notes:
   "destination_city" (for the flight) AND "location" (for the hotel) with that
   same city.
 - "start_date" / "end_date" are used for weather requests.
-- "passport_country" / "destination_country" are used for "visa" lookup requests only.
+- "passport_country" / "destination_country" are extracted for "visa" lookup
+  requests AND for "planner" requests that mention nationality/visa info
+  (PlannerSkill uses them internally even though "visa" won't appear in the
+  skills list for these).
 - "visa_intent" must be:
   - "lookup" for visa requirement or entry rule requests.
   - "advice" for general visa questions, explanations, recommendations, approval chances, or guidance.
@@ -743,6 +755,9 @@ Formatting Rules
   - Total Trip Cost
   - Remaining Budget
   - Over Budget By
+
+-Use the supplied monetary values exactly.
+-Do not recalculate, convert, estimate, or modify flight, hotel, total-cost, activity-cost, or remaining-budget values.
 """.strip()
 ITINERARY_PROMPT = """
 You are Labiba's premium travel-planning engine — a smart, detail-oriented
