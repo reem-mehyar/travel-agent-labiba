@@ -296,12 +296,11 @@ class TravelAgent:
 
             trip_intent = intent_data.copy()
 
-            # FlightSkill fields
+            # -----------------------------
+            # Prepare Flight + Hotel request
+            # -----------------------------
             trip_intent["destination_city"] = destination
-
-            # HotelSkill fields
             trip_intent["location"] = destination
-
             trip_intent["check_in"] = intent_data["departure_date"]
             trip_intent["check_out"] = intent_data["return_date"]
 
@@ -330,30 +329,93 @@ class TravelAgent:
             total_cost = flight_price + hotel_price
             budget = intent_data.get("budget")
 
+            # -------- Display prices with currency --------
+            hotel_display = cheapest_hotel.copy()
+
+            if hotel_display.get("price_per_night") is not None:
+                hotel_display["price_per_night"] = f"${hotel_display['price_per_night']}"
+
+            if hotel_display.get("total_price") is not None:
+                hotel_display["total_price"] = f"${hotel_display['total_price']}"
+
+            flight_display = cheapest_flight.copy()
+
+            if flight_display.get("price") is not None:
+                flight_display["price"] = f"${flight_display['price']}"
+
             trips.append({
                 "destination": destination,
-                "flight": cheapest_flight,
-                "hotel": cheapest_hotel,
-                "total_cost": total_cost,
-                "remaining_budget": (budget - total_cost) if budget is not None else None,
-                "fits_budget": (total_cost <= budget) if budget is not None else None,
-            })
-        if not trips:
-          return (
-        "I couldn't find any destinations with available flights "
-        "and hotels for your request."
-    )
+                "flight": flight_display,
+                "hotel": hotel_display,
 
-        trips.sort(key=lambda x: x["total_cost"])
-        trips.sort(key=lambda x: x["total_cost"])
+                # formatted values for the LLM
+                "total_cost": f"${total_cost}",
+                "remaining_budget": (
+                    f"${budget - total_cost}" if budget is not None else None
+                ),
+                "over_budget": (
+                    f"${total_cost - budget}"
+                    if budget is not None and total_cost > budget
+                    else "$0"
+                ),
+
+                # numeric values if you ever need calculations
+                "total_cost_value": total_cost,
+                "fits_budget": (
+                    total_cost <= budget
+                    if budget is not None
+                    else None
+                ),
+            })
+
+        if not trips:
+            return (
+                "I couldn't find any destinations with available "
+                "flights and hotels."
+            )
+
+        trips.sort(key=lambda x: x["total_cost_value"])
+
+        # ---------------------------------
+        # Choose Best Value recommendation
+        # ---------------------------------
+        best_trip = trips[0]
+
+        planner_intent = intent_data.copy()
+        planner_intent["destination_city"] = best_trip["destination"]
+        planner_intent["location"] = best_trip["destination"]
+        planner_intent["check_in"] = intent_data["departure_date"]
+        planner_intent["check_out"] = intent_data["return_date"]
+
+        planner_result = self.skills["planner"].execute(planner_intent)
+
+        # ---------------------------------
+        # Build itinerary for Best Value trip
+        # ---------------------------------
+        itinerary_result = self.itinerary_skill.execute(
+            planner_intent,
+            planner_result,
+        )
+        itinerary_payload = itinerary_result.get("itinerary_payload")
+
+        # ---------------------------------
+        # Generate final response
+        # ---------------------------------
+        search_results = {
+            "recommended_trips": trips,
+            "budget": intent_data.get("budget"),
+            "currency": intent_data.get("currency", "USD"),
+        }
+
+        if planner_result.get("planned_trip"):
+            search_results["planner_result"] = planner_result
+
+        if itinerary_payload:
+            search_results["itinerary"] = itinerary_payload
 
         return self._generate_final_response(
             user_message=user_message,
-            search_results={
-                "recommended_trips": trips,
-                "budget": intent_data.get("budget"),
-                "currency": intent_data.get("currency", "USD"),
-            },
+            search_results=search_results,
         )
 
     # ------------------------------------------------------------

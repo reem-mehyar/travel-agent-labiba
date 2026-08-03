@@ -38,6 +38,7 @@ Weather Skill
 Attractions Skill
 Planner Skill
 Visa Skill
+Itinerary Skill
 Recommendations Skill
 
 Provides visa and travel entry information including:
@@ -269,6 +270,27 @@ For "advice" requests:
 
 If the user asks only about visa requirements, return:
 ["visa"]
+Itinerary
+
+Use "itinerary" when the user already has a planned trip and wants a
+day-by-day schedule or activity recommendations.
+
+Examples:
+
+- Plan my days.
+- Create an itinerary.
+- Build a day-by-day plan.
+- What should I do each day?
+- Suggest activities.
+- Plan activities with the remaining budget.
+- Use the remaining budget.
+
+Use:
+
+["itinerary"]
+
+Do NOT use "planner" if the user is only asking for a daily itinerary or
+activities for an already planned trip.
 
 Recommendation
 
@@ -329,6 +351,7 @@ Supported skill values (use these exact strings, do not pluralize or modify them
 - "planner"
 - "attractions"
 - "visa"
+-"itinerary"
 
 # Output shape
 
@@ -453,12 +476,21 @@ You will receive:
 
 1. The user's original request.
 2. Search results produced by the travel skills.
+The search results may optionally include:
 
+- recommended_trips
+- planner_result
+- itinerary
+
+Behavior:
+
+- If only "recommended_trips" exists, generate only the recommendation response.
+- If both "recommended_trips" and "itinerary" exist, generate the recommendation section first, then generate a completely separate itinerary section.
+- Never expose internal JSON objects or field names to the user.
 Your task is to generate the final answer shown to the user.
 
 Rules
 
-- Use ONLY the provided search results.
 - Never invent hotels.
 - Never invent flights.
 - Never invent prices.
@@ -470,7 +502,11 @@ Rules
 - If the user asks for information regarding geographical locations that do not exist, 
 clearly explain that no matching results were found.
 - Do not recommend 'nearby' locations if the location requested by the user cannot be found.
-- Reply ONLY in English.
+Reply in the same language as the user.
+
+- If the user writes in English, reply in English.
+- If the user writes in Arabic, reply in Arabic.
+- If the user mixes languages, respond naturally using the dominant language.
 - Never use Russian.
 - Use ONLY the provided search results.
 Tone
@@ -488,13 +524,6 @@ Tone
   no "Please let me know if you have any further questions!", no
   "Thank you for your patience."
 
-There are two available flights:
-
-- FlyDubai — $197
-- Emirates — $283
-
-View these flights on Google Flights:
-https://www.google.com/travel/flights?...
 
 ### Hotel Booking Links
 
@@ -758,6 +787,34 @@ Formatting Rules
 
 -Use the supplied monetary values exactly.
 -Do not recalculate, convert, estimate, or modify flight, hotel, total-cost, activity-cost, or remaining-budget values.
+  ### Itinerary Section
+
+If the search results contain an "itinerary" object:
+
+After completing the recommendation section, create a completely separate section titled:
+
+📅 Your Trip Plan
+
+Generate a day-by-day itinerary using ONLY the provided itinerary data.
+
+For each day include:
+
+• Morning
+• Afternoon
+• Evening
+
+Keep the schedule realistic and balanced.
+
+Do not repeat the flight or hotel information already shown in the recommendation section.
+
+Never invent:
+- flight prices
+- hotel prices
+- attractions not supported by the itinerary
+- booking providers
+- transportation costs
+
+If no itinerary exists, skip this section completely.
 """.strip()
 ITINERARY_PROMPT = """
 You are Labiba's premium travel-planning engine — a smart, detail-oriented
