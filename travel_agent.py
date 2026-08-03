@@ -62,6 +62,9 @@ class TravelAgent:
             "visa": "visa",
         }
 
+        self.pending_intent = {}
+        self._skill_result_cache = {}
+
     def handle_request(self, user_message: str) -> str:
         """
         Handle a complete user request, with short-term memory across turns.
@@ -204,13 +207,20 @@ class TravelAgent:
         Execute every requested skill and merge their results.
         """
         skill_names = intent_data.get("skills", [])
-
         combined_result = {}
+
         for skill_name in skill_names:
             skill = self.skills.get(skill_name)
             if skill is None:
                 continue
+
+            cached = self._skill_result_cache.get(skill_name)
+            if cached and cached["snapshot"] == intent_data:
+                combined_result.update(cached["result"])
+                continue
+
             result = skill.execute(intent_data)
+            self._skill_result_cache[skill_name] = {"snapshot": dict(intent_data), "result": result}
             combined_result.update(result)
 
         return combined_result
