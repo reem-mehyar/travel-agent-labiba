@@ -8,13 +8,30 @@
 
 import os
 import requests
+import time
 from dotenv import load_dotenv
 
 load_dotenv()
 
 SERPAPI_API_KEY = os.getenv("SERPAPI_API_KEY")
 BASE_URL = "https://serpapi.com/search"
+CACHE_TTL_SECONDS = 1800
+_iata_cache: dict[str, tuple[float, list[dict]]] = {}
 
+# CACHE ---------------------------------------------
+def _cache_get(cache: dict, key):
+    entry = cache.get(key)
+    if entry is None:
+        return None
+    timestamp, value = entry
+    if time.time() - timestamp > CACHE_TTL_SECONDS:
+        del cache[key]
+        return None
+    return value
+
+
+def _cache_set(cache: dict, key, value) -> None:
+    cache[key] = (time.time(), value)
 
 # ----------------------------------------------------
 # General Request
@@ -82,7 +99,13 @@ def search_flight_deals(departure_id: str, currency: str = "JOD", **kwargs,) -> 
 # ----------------------------------------------------
 # Flight Autocomplete
 # ----------------------------------------------------
+
 def autocomplete_flight_location(query: str) -> list[dict]:
+
+    key = query.strip().lower()
+    cached = _cache_get(_iata_cache, key)
+    if cached is not None:
+        return cached
 
     params = {
         "engine": "google_flights_autocomplete",
@@ -90,8 +113,10 @@ def autocomplete_flight_location(query: str) -> list[dict]:
     }
 
     data = serpapi_request(params)
+    result = data.get("suggestions", [])
 
-    return data.get("suggestions", [])
+    _cache_set(_iata_cache, key, result)
+    return result
 
 # ----------------------------------------------------
 # Google Places
@@ -212,6 +237,10 @@ def search_hotel_reviews(property_token: str) -> list[dict]:
 # ----------------------------------------------------
 # Hotels Search
 # ----------------------------------------------------
+
+_hotel_search_cache: dict[tuple, tuple[float, list[dict]]] = {}
+_hotel_details_cache: dict[tuple, tuple[float, dict]] = {}
+
 def search_hotels(
     location: str,
     check_in_date: str,
@@ -220,6 +249,11 @@ def search_hotels(
     vacation_rentals: bool = False,
 ) -> list[dict]:
 
+    key = (location.strip().lower(), check_in_date, check_out_date, adults, vacation_rentals)
+    cached = _cache_get(_hotel_search_cache, key)
+    if cached is not None:
+        return cached
+    
     params = {
         "engine": "google_hotels",
         "q": location,
@@ -230,22 +264,15 @@ def search_hotels(
     }
 
     data = serpapi_request(params)
-
     properties = data.get("properties", [])
 
     if vacation_rentals:
-        return [
-            p
-            for p in properties
-            if p.get("type") != "hotel"
-        ]
+        result = [p for p in properties if p.get("type") != "hotel"]
+    else:
+        result = [p for p in properties if p.get("type") == "hotel"]
 
-    return [
-        p
-        for p in properties
-        if p.get("type") == "hotel"
-    ]
-
+    _cache_set(_hotel_search_cache, key, result)
+    return result
 
 # ----------------------------------------------------
 # Hotel Details
@@ -255,14 +282,17 @@ def search_hotel_details(
     location: str,
     check_in_date: str,
     check_out_date: str,
-    adults: int = 2,
-) -> dict:
+    adults: int = 2 ) -> dict:
     """
     Fetch full property details, including:
       - 'prices': simple list of OTA booking providers
       - 'featured_prices': detailed list of OTA providers with
         per-room breakdown, images, and official/non-official flag
     """
+    key = (property_token, check_in_date, check_out_date, adults)
+    cached = _cache_get(_hotel_details_cache, key)
+    if cached is not None:
+        return cached
 
     params = {
         "engine": "google_hotels",
@@ -277,5 +307,5 @@ def search_hotel_details(
     }
 
     data = serpapi_request(params)
-
+    _cache_set(_hotel_details_cache, key, data)
     return data
